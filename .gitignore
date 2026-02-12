@@ -20,3 +20,4 @@ dist-ssr
 .env.production
 
 */old_videos/*
+*/old_images/*
