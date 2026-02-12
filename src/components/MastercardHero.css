@@ -46,6 +46,10 @@
   top: 50%;
   left: 50%;
   animation: mc-hero-emit-ring 2.7s linear infinite;
+  animation-fill-mode: both;
+  transform: translate(-50%, -50%) scale(var(--mc-ring-start-scale, 0.75));
+  opacity: 0;
+  will-change: transform, opacity;
   z-index: 0;
 }
 

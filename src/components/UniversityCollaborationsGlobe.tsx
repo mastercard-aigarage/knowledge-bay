@@ -2,6 +2,9 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Globe from 'react-globe.gl';
 import type { UniversityCollaborationLocation } from '../types';
 import './GlobeMarkers.css';
+import { createBeaconPin } from './globeBeaconPin';
+import { useBeaconPinPulse } from './useBeaconPinPulse.ts';
+import { resolveImagePath } from '../utils/resolveImagePath';
 
 interface UniversityCollaborationsGlobeProps {
   data: UniversityCollaborationLocation[];
@@ -15,6 +18,12 @@ const UniversityCollaborationsGlobe: React.FC<UniversityCollaborationsGlobeProps
   const [size, setSize] = useState({ width: 800, height: 800 });
   const isHoveringPointRef = useRef(false);
   const [hoveredKey, setHoveredKey] = useState<string | null>(null);
+
+  useBeaconPinPulse(globeEl);
+
+  // react-globe.gl runtime prop is `objectFacesSurface` (singular). The distributed .d.ts currently
+  // exposes `objectFacesSurfaces`, so we spread an `any` typed object to keep both TS + runtime happy.
+  const objectFacesSurfaceProps = useMemo(() => ({ objectFacesSurface: true }) as any, []);
 
   const POINTER_HEX = '#FF671B';
   // Aesthetic warm yellow (not pure/blunt #FFFF00)
@@ -118,17 +127,17 @@ const UniversityCollaborationsGlobe: React.FC<UniversityCollaborationsGlobeProps
         ref={globeEl}
         width={size.width}
         height={size.height}
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+        globeImageUrl={resolveImagePath("assets/images/globe4.jpg")}
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
         backgroundColor="rgba(0,0,0,0)"
-        pointsData={points}
-        pointLat={(d: any) => d.lat}
-        pointLng={(d: any) => d.lng}
-        pointColor={() => POINTER_HEX}
-        pointAltitude={(d: any) => (hoveredKey && getPointKey(d) === hoveredKey ? 0.038 : 0.028)}
-        pointRadius={(d: any) => (hoveredKey && getPointKey(d) === hoveredKey ? 1.18 : 0.92)}
-        pointLabel={() => ''}
-        onPointHover={(p: any) => {
+        objectsData={points}
+        objectLat={(d: any) => d.lat}
+        objectLng={(d: any) => d.lng}
+        objectAltitude={() => 0}
+        objectRotation={() => ({ x: 26, z: -10 })}
+        objectThreeObject={() => createBeaconPin(POINTER_HEX)}
+        {...objectFacesSurfaceProps}
+        onObjectHover={(p: any) => {
           isHoveringPointRef.current = Boolean(p);
           const controls = globeEl.current?.controls?.();
           if (!controls) return;

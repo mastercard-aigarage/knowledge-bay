@@ -585,7 +585,16 @@ const AIGAIGateway: React.FC<AIGAIGatewayProps> = ({ onSelect, onBack, onOpenEve
             >
               <span className="aig-node-gloss" aria-hidden="true" />
               <span className="aig-node-icon" aria-hidden="true">{n.icon}</span>
-              <span className="aig-node-title">{n.title}</span>
+              <span className={`aig-node-title${n.id === 'university-collaborations' ? ' aig-node-title--split' : ''}`}>
+                {n.id === 'university-collaborations' ? (
+                  <>
+                    <span>University</span>
+                    <span>Collaborations</span>
+                  </>
+                ) : (
+                  n.title
+                )}
+              </span>
               <span className="aig-node-ring" aria-hidden="true" />
             </motion.button>
           </div>

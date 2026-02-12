@@ -268,22 +268,6 @@ const AIEvolutionCardCarousel: React.FC<AIEvolutionCardCarouselProps> = ({
         })}
       </div>
 
-      {length > 1 && (
-        <div className="ai-evo-carousel-dots" aria-hidden="true">
-          {cards.map((card, idx) => (
-            <button
-              key={card.id}
-              type="button"
-              className={`ai-evo-dot ${idx === clampIndex(activeIndex, length) ? 'active' : ''}`}
-              onClick={() => setActive(idx)}
-              tabIndex={-1}
-              aria-label={`Focus ${card.title}`}
-              title={`Focus ${card.title}`}
-            />
-          ))}
-        </div>
-      )}
-
       <div className="ai-evo-carousel-hint" aria-hidden="true">
       </div>
     </div>

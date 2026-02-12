@@ -176,6 +176,16 @@
   line-clamp: 2;
 }
 
+.aig-node-title--split {
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.aig-node-title--split > span {
+  display: block;
+}
+
 .aig-node-ring {
   position: absolute;
   inset: 0;
