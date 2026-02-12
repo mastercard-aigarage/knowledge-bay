@@ -142,8 +142,8 @@
 }
 
 .landing-welcome-text {
-  font-size: 56px;
-  font-weight: 800;
+  font-size: clamp(50px, 3vw, 63px);
+  font-weight: 500;
   background: linear-gradient(
     90deg,
     #eb001b 0%,
@@ -160,7 +160,7 @@
 }
 
 .landing-subtitle {
-  font-size: 18px;
+  font-size: clamp(18px, 1.25vw, 26px);
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
   letter-spacing: 1px;
@@ -175,16 +175,16 @@
 
 /* Start Button */
 .landing-start-button {
-  margin-top: 20px;
-  padding: 16px 48px;
-  font-size: 16px;
+  margin-top: clamp(20px, 1.39vw, 30px);
+  padding: clamp(16px, 1.11vw, 22px) clamp(48px, 3.33vw, 68px);
+  font-size: clamp(16px, 1.11vw, 20px);
   font-weight: 600;
   letter-spacing: 1.2px;
   
   background: linear-gradient(135deg, rgba(235, 0, 27, 0.8) 0%, rgba(247, 158, 27, 0.8) 100%);
   color: white;
   border: 1px solid rgba(255, 170, 0, 0.4);
-  border-radius: 50px;
+  border-radius: var(--mc-radius-pill);
   
   cursor: pointer;
   position: relative;
@@ -228,7 +228,7 @@
 
 .button-text {
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .button-arrow {

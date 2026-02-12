@@ -1,5 +1,5 @@
 .ai-evo-carousel {
-  width: min(900px, 100%);
+  width: min(1200px, 100%);
   position: relative;
   margin: 0 auto;
 
@@ -62,12 +62,16 @@
 
 .ai-evo-carousel-stage {
   position: relative;
-  height: 390px;
+  /* Responsive card sizing (keeps a constant aspect ratio).
+     Base design was 600x330 => aspect ratio ~1.818. */
+  --ai-evo-card-width: min(94%, clamp(360px, 52vw, 840px));
+  --ai-evo-center-width: var(--ai-evo-card-width);
+  --ai-evo-card-height: calc(var(--ai-evo-card-width) * 330 / 600);
+
+  height: calc(var(--ai-evo-card-height) + 60px);
   display: grid;
   place-items: center;
   transform-style: preserve-3d;
-
-  --ai-evo-center-width: min(600px, 94%);
 }
 
 .ai-evo-carousel-clickzones {
@@ -103,8 +107,8 @@
   --ai-evo-accent: rgba(255, 170, 0, 1);
 
   position: absolute;
-  width: min(600px, 94%);
-  height: 330px;
+  width: var(--ai-evo-card-width);
+  aspect-ratio: 600 / 330;
   border-radius: 22px;
 
   overflow: hidden;
@@ -124,10 +128,23 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
-  padding: 26px;
+  /* Fallback scaling when container query units aren't supported. */
+  font-size: clamp(14px, 1.2vw, 20px);
+
+  /* Padding scales with the card too. */
+  --ai-evo-card-pad: clamp(18px, 2.2vw, 32px);
+  padding: var(--ai-evo-card-pad);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/* Prefer scaling based on the card’s actual width (so large monitors scale up proportionally). */
+@supports (container-type: inline-size) {
+  .ai-evo-card {
+    container-type: inline-size;
+    font-size: clamp(14px, 2.6cqi, 20px);
+  }
 }
 
 .ai-evo-card::before {
@@ -249,11 +266,11 @@
 
 .ai-evo-card-content-blur {
   position: absolute;
-  inset: 22px;
+  inset: 1.375em;
   z-index: 2;
   pointer-events: none;
 
-  filter: blur(14px);
+  filter: blur(0.9em);
   opacity: 0.95;
   transform: translateZ(0);
 }
@@ -288,9 +305,9 @@
 }
 
 .ai-evo-card-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+  width: 4em;
+  height: 4em;
+  border-radius: 1em;
   display: grid;
   place-items: center;
 
@@ -305,18 +322,24 @@
 }
 
 .ai-evo-card-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 2em;
+  height: 2em;
+}
+
+/* The AI@Mastercard glyph has more visual padding than the other two; bump it slightly. */
+.ai-evo-card-icon svg.ai-evo-icon-aiMastercard {
+  width: 3.35em;
+  height: 3.35em;
 }
 
 .ai-evo-card-text {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 0.5em;
 }
 
 .ai-evo-card-title {
-  font-size: 28px;
+  font-size: 1.75em;
   font-weight: 800;
   letter-spacing: 0.6px;
   font-family: var(--mc-font-sans);
@@ -333,21 +356,21 @@
 }
 
 .ai-evo-card-desc {
-  font-size: 15px;
+  font-size: 0.95em;
   letter-spacing: 0.6px;
   color: rgba(255, 255, 255, 0.68);
 }
 
 .ai-evo-card-meta {
   display: flex;
-  gap: 8px;
+  gap: 0.5em;
   align-items: center;
   opacity: 0.85;
 }
 
 .ai-evo-meta-dot {
-  width: 8px;
-  height: 8px;
+  width: 0.5em;
+  height: 0.5em;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.12);
   box-shadow: 0 0 16px rgba(255, 170, 0, 0.15);
@@ -360,15 +383,15 @@
 
 .ai-evo-card-cta {
   position: absolute;
-  right: 18px;
-  bottom: 16px;
+  right: 0;
+  bottom: 1em;
 
-  font-size: 12px;
+  font-size: 0.75em;
   letter-spacing: 1.6px;
-  text-transform: uppercase;
+  text-transform: none;
 
-  padding: 8px 12px;
-  border-radius: 999px;
+  padding: 0.55em 0.85em;
+  border-radius: var(--mc-radius-pill);
 
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(0, 0, 0, 0.18);
@@ -422,29 +445,60 @@
   color: rgba(255, 255, 255, 0.45);
 }
 
+/* Laptop screens: scale cards down so they don't dominate smaller displays */
+@media (max-width: 2000px) and (min-width: 700px) {
+  .ai-evo-carousel-stage {
+    --ai-evo-card-width: min(94%, clamp(320px, 42vw, 580px));
+  }
+
+  .ai-evo-card {
+    font-size: clamp(12px, 1.05vw, 16px);
+    --ai-evo-card-pad: clamp(14px, 1.8vw, 24px);
+    border-radius: 18px;
+  }
+
+  @supports (container-type: inline-size) {
+    .ai-evo-card {
+      font-size: clamp(12px, 2.4cqi, 18px);
+    }
+  }
+
+  .ai-evo-card-icon {
+    width: 3.2em;
+    height: 3.2em;
+    border-radius: 0.8em;
+  }
+
+  .ai-evo-card-icon svg {
+    width: 1.6em;
+    height: 1.6em;
+  }
+
+  .ai-evo-card-icon svg.ai-evo-icon-aiMastercard {
+    width: 2.6em;
+    height: 2.6em;
+  }
+
+  .ai-evo-card-title {
+    font-size: 1.5em;
+  }
+
+  .ai-evo-card-desc {
+    font-size: 0.85em;
+  }
+}
+
 @media (max-width: 768px) {
   .ai-evo-carousel {
     padding: 20px 16px 16px;
   }
 
   .ai-evo-carousel-stage {
-    height: 300px;
-
-    --ai-evo-center-width: min(480px, 94%);
+    --ai-evo-card-width: min(94%, clamp(300px, 86vw, 520px));
+    height: calc(var(--ai-evo-card-height) + 48px);
   }
 
-  .ai-evo-card {
-    height: 250px;
-    width: min(480px, 94%);
-  }
-
-  .ai-evo-card-title {
-    font-size: 22px;
-  }
-
-  .ai-evo-card-desc {
-    font-size: 13px;
-  }
+  /* Typography now scales via the card font-size + em units. */
 }
 
 @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {

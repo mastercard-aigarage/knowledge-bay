@@ -4,6 +4,10 @@
   position: relative;
   display: block;
   overflow: hidden;
+
+  /* Responsive sizing for the orbiting gateway circles.
+     Scales up on large displays (TVs) while staying usable on laptops/phones. */
+  --aig-node-size: clamp(132px, 18vmin, 250px);
 }
 
 .aig-gateway-header {
@@ -20,7 +24,7 @@
 }
 
 .aig-gateway-header h1 {
-  font-size: 44px;
+  font-size: clamp(44px, 3.06vw, 64px);
   font-weight: 800;
   background: linear-gradient(90deg, #eb001b 0%, #f79e1b 45%, #ffb347 55%, #f79e1b 65%);
   -webkit-background-clip: text;
@@ -34,6 +38,7 @@
 
 .aig-gateway-header p {
   margin: 0;
+  font-size: clamp(16px, 1.11vw, 22px);
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 1px;
   font-weight: 300;
@@ -79,8 +84,8 @@
 
 .aig-node {
   position: relative;
-  width: 152px;
-  height: 152px;
+  width: var(--aig-node-size);
+  height: var(--aig-node-size);
   border-radius: 999px;
 
   overflow: hidden;
@@ -96,11 +101,11 @@
   cursor: pointer;
 
   display: grid;
-  grid-template-rows: max-content max-content max-content;
+  grid-template-rows: max-content max-content;
   place-items: center;
   place-content: center;
-  gap: 2px;
-  padding: 10px 12px;
+  gap: 8px;
+  padding: 12px 14px;
 
   box-shadow:
     0 18px 70px rgba(0, 0, 0, 0.60),
@@ -141,25 +146,25 @@
   filter: drop-shadow(0 0 14px color-mix(in srgb, var(--node-tint) 45%, transparent));
 
   line-height: 1;
-  margin-bottom: 3px;
+  margin-bottom: 0;
 }
 
 .aig-node-icon svg {
-  width: 34px;
-  height: 34px;
+  width: clamp(42px, 5.0vmin, 74px);
+  height: clamp(42px, 5.0vmin, 74px);
   display: block;
 }
 
 .aig-node-title {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.75px;
-  text-transform: uppercase;
+  font-size: clamp(13px, 1.8vmin, 23px);
+  font-weight: 500;
+  letter-spacing: 0.25px;
+  text-transform: none;
   text-align: center;
   margin: 0;
 
   max-width: 100%;
-  line-height: 1.05;
+  line-height: 1.12;
   overflow: hidden;
   text-overflow: ellipsis;
   word-break: break-word;
@@ -168,27 +173,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-}
-
-.aig-node-subtitle {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.68);
-  letter-spacing: 0.7px;
-  text-align: center;
-
-  margin: 0;
-
-  max-width: 100%;
-  line-height: 1.1;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-word;
-  hyphens: auto;
-  padding: 0 8px;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 
 .aig-node-ring {
@@ -204,20 +189,20 @@
 
 .aig-back-button {
   position: fixed;
-  left: 20px;
-  top: 20px;
+  left: 35px;
+  top: 35px;
   z-index: 10;
 
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 
-  padding: 10px 12px;
+  padding: 12px 16px;
   border: 1px solid rgba(255, 170, 0, 0.16);
   background: rgba(0, 0, 0, 0.38);
   color: rgba(255, 255, 255, 0.75);
-  border-radius: 14px;
-  font-size: 14px;
+  border-radius: var(--mc-radius-pill);
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   letter-spacing: 0.8px;
@@ -239,25 +224,13 @@
   transform: translateX(-1px);
 }
 
-@media (max-width: 1200px) {
-  .aig-node {
-    width: 142px;
-    height: 142px;
-  }
-}
-
 @media (max-width: 768px) {
   .aig-gateway-header h1 {
     font-size: 30px;
   }
 
-  .aig-node {
-    width: 132px;
-    height: 132px;
-  }
-
   .aig-back-button {
-    left: 12px;
-    top: 12px;
+    left: 35px;
+    top: 35px;
   }
 }

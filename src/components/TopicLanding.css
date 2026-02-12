@@ -14,18 +14,18 @@
 
 .topic-landing-back {
   position: fixed;
-  left: 20px;
-  top: 20px;
+  left: 35px;
+  top: 35px;
   z-index: 10;
 
   border: 1px solid rgba(255, 170, 0, 0.16);
   background: rgba(0, 0, 0, 0.38);
   color: rgba(255, 255, 255, 0.75);
-  border-radius: 14px;
-  padding: 10px 12px;
+  border-radius: var(--mc-radius-pill);
+  padding: 12px 16px;
   cursor: pointer;
   letter-spacing: 0.8px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
 
   backdrop-filter: blur(10px);
@@ -53,7 +53,7 @@
 }
 
 .topic-landing-title {
-  font-size: 56px;
+  font-size: clamp(44px, 3.06vw, 64px);
   font-weight: 800;
 
   background: linear-gradient(90deg, #eb001b 0%, #f79e1b 45%, #ffb347 55%, #f79e1b 65%);
@@ -61,18 +61,17 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 
-  text-shadow: 0 0 40px rgba(247, 158, 27, 0.35);
+  text-shadow: 0 0 40px rgba(247, 158, 27, 0.25);
   font-family: var(--mc-font-sans);
   letter-spacing: 0.5px;
-  animation: landingGlow 3s ease-in-out infinite;
 }
 
 .topic-landing-subtitle {
   margin-top: 12px;
-  font-size: 14px;
+  font-size: clamp(14px, 1.11vw, 22px);
   color: rgba(255, 255, 255, 0.65);
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  text-transform: none;
   font-weight: 300;
 }
 
@@ -80,8 +79,9 @@
   /* True full-page stage behind the content */
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  /* Avoid 100vw/100vh scrollbar quirks that can visually shift centering */
+  width: 100%;
+  height: 100%;
 
   border-radius: 0;
   border: none;
@@ -104,9 +104,11 @@
   right: 0;
   /* Reserve space so bubbles never clash with heading / footer UI.
      Keep top/bottom symmetric so the bubble centroid stays screen-centered. */
-  top: clamp(150px, 18vh, 260px);
-  bottom: clamp(150px, 18vh, 260px);
-  overflow: hidden;
+  top: var(--topic-stage-top, clamp(100px, 18vh, 260px));
+  bottom: var(--topic-stage-bottom, clamp(-300px, 18vh, 240px));
+  /* Let bubble shadows/hover scale render without a hard crop line.
+     The outer stage still clips at the viewport edges. */
+  overflow: visible;
 }
 
 .topic-landing-stage::before {
@@ -146,10 +148,10 @@
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--bubble-tint) 55%, rgba(255, 255, 255, 0.10));
   background:
-    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.18), transparent 44%),
-    radial-gradient(circle at 50% 70%, color-mix(in srgb, var(--bubble-tint) 24%, transparent), transparent 68%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01)),
-    rgba(0, 0, 0, 0.44);
+    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.12), transparent 46%),
+    radial-gradient(circle at 50% 70%, color-mix(in srgb, var(--bubble-tint) 18%, transparent), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.006)),
+    rgba(0, 0, 0, 0.66);
 
   box-shadow:
     0 18px 70px rgba(0, 0, 0, 0.60),
@@ -178,6 +180,17 @@
   transition: border-color 140ms ease, background 140ms ease, box-shadow 140ms ease;
 }
 
+.topic-bubble-icon {
+  width: clamp(26px, 22%, 56px);
+  height: clamp(26px, 22%, 56px);
+  object-fit: contain;
+  opacity: 0.92;
+  filter:
+    drop-shadow(0 10px 22px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.06));
+  pointer-events: none;
+}
+
 .topic-bubble::before {
   content: '';
   position: absolute;
@@ -187,7 +200,7 @@
     radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.42), transparent 35%),
     radial-gradient(circle at 70% 78%, rgba(255, 255, 255, 0.10), transparent 45%);
   mix-blend-mode: screen;
-  opacity: 0.55;
+  opacity: 0.42;
   pointer-events: none;
 }
 
@@ -213,17 +226,17 @@
 }
 
 .topic-bubble-label {
-  font-size: 14px;
+  font-size: clamp(15px, 1.25vw, 24px);
   font-weight: 700;
   letter-spacing: 0.4px;
   text-align: center;
   line-height: 1.2;
-  max-width: 160px;
+  max-width: min(220px, 78%);
 }
 
 .topic-bubble-count {
   font-family: var(--mc-font-sans);
-  font-size: 22px;
+  font-size: clamp(24px, 2.22vw, 44px);
   font-weight: 800;
   color: color-mix(in srgb, var(--bubble-tint) 88%, white);
   text-shadow: 0 0 22px color-mix(in srgb, var(--bubble-tint) 40%, transparent);
@@ -292,13 +305,13 @@
 
 @media (max-width: 900px) {
   .topic-landing-title {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   /* Stage is fixed full-viewport; no min-height needed */
 
   .topic-bubble-label {
-    max-width: 140px;
+    max-width: min(160px, 78%);
   }
 }
 
@@ -312,7 +325,6 @@
   }
 
   .topic-landing-subtitle {
-    font-size: 12px;
     letter-spacing: 2px;
   }
 

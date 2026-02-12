@@ -8,7 +8,7 @@
   },
   {
     "id": "events",
-    "title": "Events",
+    "title": "Outreach",
     "subtitle": "Talks • demos • meetups",
     "tint": "rgba(247, 158, 27, 1)",
     "iconKey": "events"
@@ -16,7 +16,7 @@
   {
     "id": "university-collaborations",
     "title": "University Collaborations",
-    "subtitle": "Labs • research • talent",
+    "subtitle": "Collaborating Globally. Innovating Boldly.",
     "tint": "rgba(255, 179, 71, 1)",
     "iconKey": "university"
   },

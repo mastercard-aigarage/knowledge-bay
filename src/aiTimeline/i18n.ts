@@ -5,10 +5,10 @@ const resources = {
   en: {
     translation: {
       hero: {
-        title: "The Evolution of AI",
+        title: "Decades of AI evolution",
         dateRange: "1960s - {{year}}",
         description1:
-          "This timeline attempts to tell a brief history of artificial intelligence as we see today, from its conceptual origins in the 1960s to the present day. It highlights key milestones, breakthroughs, and events that have shaped the development and adoption of AI technologies over the decades.",
+          "A journey through the ideas and breakthroughs that shaped modern artificial intelligence from the 1950s to today.",
         // description2:
         //   "Note: Curation is inherently subjective, and many events may have been missed. If you'd like to contribute, visit the project's ",
         // githubLink: "GitHub",

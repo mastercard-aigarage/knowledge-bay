@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import './AIGUniversityCollaborationsPage.css';
 import { content } from '../content/content';
-import { useMemo, useState } from 'react';
-import type { UniversityCollaborationLocation } from '../types';
+import { useMemo } from 'react';
 import UniversityCollaborationsGlobe from './UniversityCollaborationsGlobe';
-import CollaborationModal from './CollaborationModal';
+import { toTitleCase } from '../utils/toTitleCase';
 
 interface AIGUniversityCollaborationsPageProps {
   onBack: () => void;
@@ -14,8 +13,6 @@ const AIGUniversityCollaborationsPage: React.FC<AIGUniversityCollaborationsPageP
   const node = content.aigGatewayNodes.find((n) => n.id === 'university-collaborations');
   const items = content.universityCollaborations;
   const backLabel = content.pages.aigGateway.backButton?.text ?? '← Back';
-
-  const [selected, setSelected] = useState<UniversityCollaborationLocation | null>(null);
 
   const { globeItems, missingCoordCount } = useMemo(() => {
     const withCoords = items.filter((d) => typeof d.lat === 'number' && typeof d.lng === 'number');
@@ -37,7 +34,7 @@ const AIGUniversityCollaborationsPage: React.FC<AIGUniversityCollaborationsPageP
 
       <header className="aig-uni-hero">
         <h1 className="aig-uni-title">{node?.title ?? 'University Collaborations'}</h1>
-        <p className="aig-uni-subtitle">{node?.subtitle ?? ''}</p>
+        <p className="aig-uni-subtitle">{toTitleCase(node?.subtitle ?? '')}</p>
         {missingCoordCount > 0 && (
           <p className="aig-uni-note">
             {missingCoordCount} entr{missingCoordCount === 1 ? 'y is' : 'ies are'} missing coordinates and won't appear on the globe until Lat/Lng are filled in Excel.
@@ -47,13 +44,11 @@ const AIGUniversityCollaborationsPage: React.FC<AIGUniversityCollaborationsPageP
 
       <div className="aig-uni-globe">
         {globeItems.length > 0 ? (
-          <UniversityCollaborationsGlobe data={globeItems} onLocationClick={setSelected} />
+          <UniversityCollaborationsGlobe data={globeItems} />
         ) : (
           <div className="aig-uni-empty">No collaborations with coordinates found.</div>
         )}
       </div>
-
-      <CollaborationModal location={selected} onClose={() => setSelected(null)} />
     </motion.section>
   );
 };

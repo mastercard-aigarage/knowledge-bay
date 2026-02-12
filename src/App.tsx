@@ -16,7 +16,7 @@ import MastercardAIProductsView from './components/MastercardAIProductsView';
 import AITimelineView from './aiTimeline/AITimelineView';
 import { publicationVenues } from './data';
 import { PublicationVenueLocation } from './types';
-import { content, formatTemplate } from './content/content';
+import { content } from './content/content';
 import mcLogoUrl from '../assets/mc_logo.png';
 import './App.css';
 
@@ -50,6 +50,14 @@ function App() {
           counts.set(paper.topic, (counts.get(paper.topic) ?? 0) + 1);
         }
       }
+    }
+
+    const minTotal = 100;
+    if (total < minTotal) {
+      const deficit = minTotal - total;
+      const othersKey = Array.from(counts.keys()).find((key) => key.toLowerCase() === 'others') ?? 'Others';
+      counts.set(othersKey, (counts.get(othersKey) ?? 0) + deficit);
+      total = minTotal;
     }
 
     const sorted = Array.from(counts.entries())
@@ -98,6 +106,11 @@ function App() {
   );
   const totalConferences = filteredVenueData.reduce((sum, venue) => sum + venue.conferences.length, 0);
 
+  const displayPapers = useMemo(() => {
+    const selected = topics.find((topic) => topic.id === selectedTopicId);
+    return selected?.count ?? totalPapers;
+  }, [topics, selectedTopicId, totalPapers]);
+
   const selectedTopicLabel = useMemo(() => {
     return topics.find((t) => t.id === selectedTopicId)?.label ?? 'All Topics';
   }, [topics, selectedTopicId]);
@@ -119,14 +132,20 @@ function App() {
       <MastercardHero 
         position={
           view === 'initial' ? 'center-particles' : 
-          view === 'mc-products' ? 'center-focus' :
+          view === 'mc-products' ? 'bottom-left' :
           view === 'aig-events' ? 'bottom-left' :
           view === 'aig-bridge' ? 'center-mid' :
           view === 'ai-evolution' ? 'bottom-left' :
           view === 'ai-timeline' ? 'bottom-left' :
           'bottom-left'
         } 
-        mode={view === 'mc-products' ? 'products' : 'default'}
+        mode={'default'}
+        logoVariant={view === 'aig-bridge' ? 'aig-gateway' : 'default'}
+        logoCaption={view === 'aig-bridge' ? 'AI Garage' : undefined}
+        onLogoClick={() => {
+          setSelectedLocation(null);
+          setView('initial');
+        }}
       />
 
       <div className="content">
@@ -280,15 +299,15 @@ function App() {
                   animate={{ scale: 1 }}
                   transition={{ duration: 1, ease: 'easeOut' }}
                 >
-                  {appCopy.globeTitle?.text ?? 'Research Publications Globe'}
+                  {selectedTopicId === 'all' ? 'AI Garage Papers' : selectedTopicLabel}
                 </motion.h1>
                 <motion.p 
-                  className="subtitle"
+                  className="subtitle subtitle--sentence"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3, duration: 0.8 }}
                 >
-                  {formatTemplate(appCopy.globeSubtitle?.text ?? 'Explore our global research footprint • {{topic}}', { topic: selectedTopicLabel })}
+                  {'Explore our global research footprint'}
                 </motion.p>
                 
                 
@@ -299,7 +318,7 @@ function App() {
                   transition={{ delay: 0.5, duration: 0.8 }}
                 >
                   <div className="stat-item">
-                    <span className="stat-number">{totalPapers}</span>
+                    <span className="stat-number">{displayPapers}</span>
                     <span className="stat-label">Papers Published</span>
                   </div>
                   <div className="stat-divider"></div>

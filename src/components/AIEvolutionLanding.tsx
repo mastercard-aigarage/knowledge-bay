@@ -4,6 +4,7 @@ import './AIEvolutionLanding.css';
 import AIEvolutionCardCarousel, { AIEvolutionCard } from './AIEvolutionCardCarousel';
 import { content } from '../content/content';
 import { iconForKey } from '../content/iconRegistry';
+import { resolveImagePath } from '../utils/resolveImagePath';
 
 interface AIEvolutionLandingProps {
   onSelectTopic: (topicId: string) => void;
@@ -59,14 +60,14 @@ const AIEvolutionLanding: React.FC<AIEvolutionLandingProps> = ({ onSelectTopic, 
           aria-label="Home"
           title="Home"
         >
-          <svg className="back-button-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M3 10.5L12 3l9 7.5v10a1.5 1.5 0 0 1-1.5 1.5H15v-7.5h-6V22H4.5A1.5 1.5 0 0 1 3 20.5v-10Z"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinejoin="round"
-            />
-          </svg>
+          <img 
+            src={resolveImagePath('assets/images/home.png')}
+            alt="" 
+            className="back-button-icon" 
+            width="25" 
+            height="25"
+            aria-hidden="true"
+          />
           Home
         </button>
 

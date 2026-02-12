@@ -51,6 +51,8 @@ const AIEvolutionCardCarousel: React.FC<AIEvolutionCardCarouselProps> = ({
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const lastInteractionRef = useRef<number>(0);
+  const stageRef = useRef<HTMLDivElement>(null);
+  const [sideOffsetPx, setSideOffsetPx] = useState(270);
 
   const length = cards.length;
 
@@ -74,6 +76,29 @@ const AIEvolutionCardCarousel: React.FC<AIEvolutionCardCarouselProps> = ({
     // If the card list changes, keep activeIndex in range.
     setActiveIndex((prev) => clampIndex(prev, length));
   }, [length]);
+
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return;
+
+    const update = () => {
+      // Keep the side cards aligned/overlapped proportionally as the carousel grows.
+      // Use a tighter factor on laptop-sized screens so cards sit closer together.
+      const width = stage.clientWidth;
+      const isLaptop = window.innerWidth <= 2000;
+      const factor = isLaptop ? 0.22 : 0.32;
+      const maxOff = isLaptop ? 300 : 420;
+      const nextOffset = Math.round(Math.min(maxOff, Math.max(160, width * factor)));
+      setSideOffsetPx(nextOffset);
+    };
+
+    update();
+
+    // ResizeObserver keeps this responsive without window listeners.
+    const ro = new ResizeObserver(update);
+    ro.observe(stage);
+    return () => ro.disconnect();
+  }, []);
 
   const setActive = (index: number) => {
     lastInteractionRef.current = Date.now();
@@ -124,7 +149,7 @@ const AIEvolutionCardCarousel: React.FC<AIEvolutionCardCarouselProps> = ({
         <div className="ai-evo-hud-glow" />
       </div>
 
-      <div className="ai-evo-carousel-stage">
+      <div className="ai-evo-carousel-stage" ref={stageRef}>
         {length > 1 && (
           <div className="ai-evo-carousel-clickzones" aria-hidden="true">
             <button
@@ -150,8 +175,8 @@ const AIEvolutionCardCarousel: React.FC<AIEvolutionCardCarouselProps> = ({
             slot === 'center'
               ? { x: 0, scale: 1, rotateY: 0, z: 0, opacity: 1 }
               : slot === 'left'
-                ? { x: -270, scale: 0.92, rotateY: 18, z: -90, opacity: 0.72 }
-                : { x: 270, scale: 0.92, rotateY: -18, z: -90, opacity: 0.72 };
+                ? { x: -sideOffsetPx, scale: 0.92, rotateY: 18, z: -90, opacity: 0.72 }
+                : { x: sideOffsetPx, scale: 0.92, rotateY: -18, z: -90, opacity: 0.72 };
 
           return (
             <motion.button
@@ -260,7 +285,6 @@ const AIEvolutionCardCarousel: React.FC<AIEvolutionCardCarouselProps> = ({
       )}
 
       <div className="ai-evo-carousel-hint" aria-hidden="true">
-        Hover to pause • Click outside the center card to focus • Enter to open
       </div>
     </div>
   );

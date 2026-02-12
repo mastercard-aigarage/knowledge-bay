@@ -50,6 +50,9 @@
 :root {
   --mc-font-sans: "Mastercard Mark", Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+  --mc-radius-pill: 999px;
+  --mc-radius-button: 14px;
 }
 
 html {

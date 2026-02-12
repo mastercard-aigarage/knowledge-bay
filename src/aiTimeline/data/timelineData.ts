@@ -27,6 +27,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.FOUNDATIONS,
+    "iconKey": "canMachinesThink",
     "media": {
       "url": "",
       "alt": "",
@@ -50,6 +51,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.FOUNDATIONS,
+    "iconKey": "neuralNet",
     "media": {
       "url": "",
       "alt": "AI Timeline Event",
@@ -73,8 +75,9 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.FOUNDATIONS,
+    "iconKey": "eliza",
     "media": {
-      "url": "/ai_timeline_imgs/ELIZA_conversation.png",
+      "url": "/ai_timeline_imgs/eliza.jpg",
       "alt": "AI Timeline Event",
       "source": "Wikipedia"
     }
@@ -96,6 +99,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.FOUNDATIONS,
+    "iconKey": "expertSystems",
     "media": {
       "url": "",
       "alt": "",
@@ -119,6 +123,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.TECHNIQUES,
+    "iconKey": "backpropagation",
     "media": {
       "url": "",
       "alt": "",
@@ -142,6 +147,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.TECHNIQUES,
+    "iconKey": "neuralNet",
     "media": {
       "url": "",
       "alt": "",
@@ -165,6 +171,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.TECHNIQUES,
+    "iconKey": "machineLearning",
     "media": {
       "url": "",
       "alt": "",
@@ -189,10 +196,11 @@ export const TIMELINE_DATA = {
     "media": {
       "url": "/ai_timeline_imgs/1996_deep-blue_320_16x9.avif",
       "alt": "",
-      "source": "Photo by IBM"
+      "source": "Gemini"
     },
     "importance": 3,
-    "category": CATEGORIES.MILESTONES
+    "category": CATEGORIES.MILESTONES,
+    "iconKey": "grandmasterAi"
   },
   {
     "start_date": {
@@ -215,7 +223,8 @@ export const TIMELINE_DATA = {
       "source": ""
     },
     "importance": 3,
-    "category": CATEGORIES.FOUNDATIONS
+    "category": CATEGORIES.FOUNDATIONS,
+    "iconKey": "computerVision"
   },
   {
     "start_date": {
@@ -234,6 +243,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.MILESTONES,
+    "iconKey": "backpropagation_breakthrough",
     "media": {
       "url": "",
       "alt": "",
@@ -257,6 +267,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.TECHNIQUES,
+    "iconKey": "gan",
     "media": {
       "url": "",
       "alt": "",
@@ -280,6 +291,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.MILESTONES,
+    "iconKey": "hackathons",
     "media": {
       "url": "",
       "alt": "",
@@ -303,6 +315,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.TECHNIQUES,
+    "iconKey": "transformer",
     "media": {
       "url": "",
       "alt": "",
@@ -326,6 +339,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.MODELS,
+    "iconKey": "publications",
     "media": {
       "url": "",
       "alt": "",
@@ -354,7 +368,8 @@ export const TIMELINE_DATA = {
       "source": ""
     },
     "importance": 3,
-    "category": CATEGORIES.MODELS
+    "category": CATEGORIES.MODELS,
+    "iconKey": "gpt3"
   },
   {
     "start_date": {
@@ -372,6 +387,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.MODELS,
+    "iconKey": "alphafold",
     "media": {
       "url": "",
       "alt": "",
@@ -395,6 +411,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.ADOPTION,
+    "iconKey": "consumerAvatar",
     "media": {
       "url": "",
       "alt": "",
@@ -418,6 +435,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.ADOPTION,
+    "iconKey": "events",
     "media": {
       "url": "",
       "alt": "",
@@ -441,6 +459,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.MODELS,
+    "iconKey": "searchNewFrontiers",
     "media": {
       "url": "",
       "alt": "",
@@ -464,6 +483,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.MILESTONES,
+    "iconKey": "hackathons",
     "media": {
       "url": "/ai_timeline_imgs/Hinton_Nobel.jpg",
       "alt": "",
@@ -487,6 +507,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.MODELS,
+    "iconKey": "aiSputnikMoment",
     "media": {
       "url": "",
       "alt": "",
@@ -510,6 +531,7 @@ export const TIMELINE_DATA = {
     },
     "importance": 3,
     "category": CATEGORIES.ADOPTION,
+    "iconKey": "agentsGoLive",
     "media": {
       "url": "",
       "alt": "",

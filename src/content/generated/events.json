@@ -1,58 +1,65 @@
 [
   {
-    "name": "Learning on Graphs Conference Meetup",
-    "destination": "IIT Delhi",
-    "description": "",
+    "name": "Learning on Graphs (LoG) Conference Meetup",
+    "destination": "Indian Institute of Technology, Delhi",
+    "description": "Held at IIT Delhi, this conference brought together academic and industry experts to explore advances in graph learning. The event featured student paper presentations, key-note talks, an industry tutorial by AI Garage on graph technologies, and an engaging panel discussion on real-world applications.",
     "link": "https://www.linkedin.com/posts/mastercard-ai-garage_lognewdelhi-graph-meetup-activity-7268236797531279360-XnoV/",
-    "imagePath": "https://picsum.photos/400/300.jpg"
+    "imagePath": "images/LoG.jpg"
   },
   {
-    "name": "WiDS Delhi x Mastercard AI Revolution",
-    "destination": "MC office",
-    "description": "",
+    "name": "Women in Data Science (WiDS) Delhi x Mastercard AI Revolution",
+    "destination": "Mastercard, Gurugram",
+    "description": "Hosted at the Mastercard office, this event celebrated women leaders in Data Science and AI. The session featured inspiring talks by women in AI, data science & STEM research, highlighting innovation, inclusion, and the growing impact of AI across industries.",
     "link": "https://www.linkedin.com/posts/mastercard-ai-garage_wids-wids2024-mastercard-activity-7199808312777850880-FXwV/",
-    "imagePath": "https://picsum.photos/400/300.jpg"
+    "imagePath": "images/WiDS.jpg"
   },
   {
     "name": "Kaggle Days Delhi NCR Meetup",
-    "destination": "MC office",
-    "description": "",
+    "destination": "Mastercard, Gurugram",
+    "description": "Hosted at the Mastercard office, the Kaggle Days Delhi NCR Meetup brought together data science enthusiasts and practitioners from the region. The event fostered knowledge sharing, community networking, and discussions around real-world machine learning challenges.",
     "link": "https://www.linkedin.com/posts/mastercard-ai-garage_kaggle-days-delhi-ncr-48th-meet-up-activity-7186742209109540866-dz_o/",
-    "imagePath": "https://picsum.photos/400/300.jpg"
+    "imagePath": "images/KaggleDays.jpg"
   },
   {
     "name": "AI Demo Day",
-    "destination": "MC office",
-    "description": "",
+    "destination": "Mastercard, Gurugram",
+    "description": "Held at the Mastercard office, the AI Demo Day featured startups presenting innovative AI-driven solutions. The event created a platform for collaboration, showcasing emerging technologies and fostering connections between startups and industry leaders.",
     "link": "https://www.linkedin.com/posts/mastercard-ai-garage_startups-ai-artficialintelligence-activity-7158389442934624256-XnEt/",
-    "imagePath": "https://picsum.photos/400/300.jpg"
+    "imagePath": "images/AIDemoday.jpg"
   },
   {
-    "name": "GFF",
+    "name": "Global Fintech Fest (GFF)",
     "destination": "Mumbai",
-    "description": "",
+    "description": "The Global Fintech Festival (GFF) was held in Mumbai, where the government-led summit brought together leaders from across the fintech ecosystem to discuss innovation and the future of digital commerce. As part of the event, Mastercard showcased ArthaAI, its AI-powered agentic commerce solution.",
     "link": "https://www.linkedin.com/feed/update/urn:li:activity:7399338208053940224",
-    "imagePath": "https://picsum.photos/400/300.jpg"
+    "imagePath": "images/GFF2025.jpg"
   },
   {
-    "name": "GPAI",
+    "name": "Global Partnership on Artificial Intelligence (GPAI)",
     "destination": "Delhi",
-    "description": "",
+    "description": "The Global Partnership On Artificial Intelligence (GPAI) was held in New Delhi, where the summit focussed on key pillars of the AI ecosystem, including Compute Capacity, Foundational Models, Datasets, Application Development, Future Skills, Startup Financing, and Safe and trusted AI.",
     "link": "https://www.linkedin.com/posts/mastercard-ai-garage_mastercard-gpai-mastercardaigarage-activity-7140303505218588672-SD16/",
-    "imagePath": "https://picsum.photos/400/300.jpg"
+    "imagePath": "images/GPAI.jpg"
   },
   {
-    "name": "Pre-summit : AI in Finance, Payments & Security",
-    "destination": "Indraprastha Institute of Information & Technology",
-    "description": "",
+    "name": "India AI Impact Pre-summit: AI in Finance, Payments & Security",
+    "destination": "Indraprastha Institute of Information Technology, Delhi",
+    "description": "Hosted at the Indraprastha Institute of Information Technology, Delhi (IIIT-Delhi), this pre-summit brought together experts from academia and industry. The event featured research paper presentations, key-note talks, and a panel discussion exploring the role of AI in finance, payments, and security.",
     "link": "https://www.linkedin.com/feed/update/urn:li:activity:7423967861880197120",
-    "imagePath": "https://picsum.photos/400/300.jpg"
+    "imagePath": "images/Pre-summit.jpg"
   },
   {
-    "name": "Geekroom",
-    "destination": "MC office",
-    "description": "",
+    "name": "Code Cubicle 3.0",
+    "destination": "Mastercard, Gurugram",
+    "description": "Hosted at the Mastercard office in collaboration with Geek Room, this student hackathon brought together young innovators to solve real-world challenges. The event encouraged hands-on learning, creativity, and collaboration in a fast-paced environment.",
     "link": "https://mastercard-my.sharepoint.com/:f:/p/vaibhav_lakhmani/IgBIEUVIW6Y_TbU4XzoqEaOOAeI9gHbndsHvWU4SMpcW_j8?email=Keshvi.Tomer%40mastercard.com&e=h5ecsb",
-    "imagePath": "https://picsum.photos/400/300.jpg"
+    "imagePath": "images/Geekroom.jpg"
+  },
+  {
+    "name": "Women Professionals in AI Linkedin Meetup",
+    "destination": "Mastercard, Gurugram",
+    "description": "Organized by Mastercard, this was the first ever in-person meetup of Women Professionals in AI LinkedIn Community. The event consisted of an exclusive floor walk at AI Garage, showcasing real-world data science and AI solutions, followed by a networking session for students, professionals, and researchers.",
+    "link": "https://www.linkedin.com/posts/mastercard-ai-garage_wpaimeetup-womeninai-aicommunity-activity-7368604389659377665-DvJW/",
+    "imagePath": "images/link.jpg"
   }
 ]

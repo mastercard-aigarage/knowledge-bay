@@ -32,14 +32,43 @@ body {
 
 .mc-top-right-logo {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 35px;
+  right: 35px;
   width: 78px;
   height: auto;
   z-index: 8;
   opacity: 0.92;
   pointer-events: none;
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+}
+
+@media (min-width: 1440px) {
+  .mc-top-right-logo {
+    width: clamp(88px, 4.6vw, 100px);
+  }
+
+  .home-button,
+  .back-button,
+  .topic-landing-back,
+  .aig-back-button,
+  .aig-events-page-back,
+  .aig-uni-back,
+  .mc-products-back,
+  .ai-timeline-back {
+    padding: 14px 20px;
+    font-size: 18px;
+  }
+
+  .back-button,
+  .aig-back-button,
+  .aig-events-page-back {
+    gap: 14px;
+  }
+
+  .back-button-icon {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .content {
@@ -66,17 +95,19 @@ body {
 
 .home-button {
   position: fixed;
-  left: 20px;
-  top: 110px;
+  left: 35px;
+  top: 35px;
   z-index: 6;
 
   border: 1px solid rgba(255, 170, 0, 0.16);
   background: rgba(0, 0, 0, 0.38);
   color: rgba(255, 255, 255, 0.75);
   border-radius: 14px;
-  padding: 10px 12px;
+  padding: 12px 16px;
   cursor: pointer;
   letter-spacing: 0.8px;
+  font-size: 16px;
+  font-weight: 500;
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -128,6 +159,12 @@ body {
   font-weight: 300;
 }
 
+/* Globe page subtitle should remain sentence case (no forced uppercase). */
+.subtitle--sentence {
+  text-transform: none;
+  letter-spacing: 1px;
+}
+
 .stats {
   display: flex;
   justify-content: center;
@@ -169,7 +206,7 @@ body {
   flex: 1;
   position: relative;
   width: 100%;
-  max-width: min(1400px, 92vw);
+  max-width: min(1700px, 96vw);
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
@@ -248,8 +285,8 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .mc-top-right-logo {
-    top: 12px;
-    right: 12px;
+    top: 35px;
+    right: 35px;
     width: 60px;
     opacity: 0.9;
   }

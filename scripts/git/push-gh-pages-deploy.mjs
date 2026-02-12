@@ -1,5 +1,8 @@
 import { execSync } from 'node:child_process';
 
+const DEFAULT_DEPLOY_REPO_URL = 'https://github.com/mastercard-aigarage/knowledge-bay.git';
+const DEPLOY_REPO_URL = process.env.DEPLOY_REPO_URL || DEFAULT_DEPLOY_REPO_URL;
+
 function run(cmd, opts = {}) {
   return execSync(cmd, { stdio: 'pipe', encoding: 'utf8', ...opts }).trim();
 }
@@ -66,7 +69,7 @@ function ensureLocalBranchExists(branchName) {
   }
 
   try {
-    runInherit(`git fetch origin ${branchName}:${branchName}`);
+    runInherit(`git fetch ${DEPLOY_REPO_URL} ${branchName}:${branchName}`);
     return;
   } catch {
     // continue
@@ -161,8 +164,8 @@ if (status && !noCommit) {
 }
 
 const pushCmd = force
-  ? `git push --force-with-lease -u origin ${targetBranch}`
-  : `git push -u origin ${targetBranch}`;
+  ? `git push --force-with-lease -u ${DEPLOY_REPO_URL} ${targetBranch}`
+  : `git push -u ${DEPLOY_REPO_URL} ${targetBranch}`;
 
 runInherit(pushCmd);
 

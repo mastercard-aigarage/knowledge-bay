@@ -1,22 +1,22 @@
 [
   {
     "id": "ai-evolution",
-    "title": "Decades of AI Evolution",
-    "description": "From rules → models → agents, at speed.",
+    "title": "Decades of AI evolution",
+    "description": "Tracing Milestones. Transforming Intelligence.",
     "accent": "#FFE082",
     "iconKey": "aiEvolution"
   },
   {
     "id": "ai-mastercard",
     "title": "AI at Mastercard",
-    "description": "Trust, security, and experiences enhanced.",
+    "description": "Scaling Innovation. Strengthening Trust.",
     "accent": "#FFB74D",
     "iconKey": "aiMastercard"
   },
   {
     "id": "ai-aig",
-    "title": "AI at AI Garage",
-    "description": "Risk insights, faster decisions, smarter ops.",
+    "title": "AI at Mastercard AI Garage",
+    "description": "Building Intelligence. Driving Impact.",
     "accent": "#FFA726",
     "iconKey": "aiAig"
   }

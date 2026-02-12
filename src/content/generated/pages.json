@@ -7,7 +7,7 @@
       "text": "Explore the world of AI in Mastercard"
     },
     "startButton": {
-      "text": "Start Exploring"
+      "text": "Start exploring"
     }
   },
   "mcProducts": {
@@ -15,7 +15,7 @@
       "text": "AI at Mastercard"
     },
     "subtitle": {
-      "text": "Products and capabilities powering trust, security, and experiences."
+      "text": "Products and capabilities powering trust, security, and experiences"
     },
     "backButton": {
       "text": "← Back"
@@ -23,16 +23,16 @@
   },
   "topicLanding": {
     "title": {
-      "text": "Choose a research topic"
+      "text": "Research Topics"
     },
     "subtitle": {
-      "text": "Tap a bubble to jump into its globe."
+      "text": "Advancing Research. Sharing Discoveries."
     },
     "backButton": {
       "text": "← Back"
     },
     "empty": {
-      "text": "No topics found."
+      "text": "No topics found"
     },
     "allTopicsCta": {
       "text": "Or explore all topics →"
@@ -52,12 +52,12 @@
       "text": "Expand topics"
     },
     "tip": {
-      "text": "Tip: switch topics without leaving the globe."
+      "text": ""
     }
   },
   "eventsHackathons": {
     "eventsTitle": {
-      "text": "Events"
+      "text": "Outreach"
     },
     "eventsSubtitle": {
       "text": "Talks • demos • meetups"
@@ -81,7 +81,7 @@
       "text": "No link"
     },
     "tipType": {
-      "text": "Tip: add a “Type” column with values “event” / “hackathon” to split lists."
+      "text": "Tip: add a “Type” column with values “event” / “hackathon” to split lists"
     }
   },
   "aigGateway": {
@@ -92,7 +92,7 @@
       "text": "AI at AI Garage"
     },
     "headerSubtitle": {
-      "text": "Select an area to explore, then jump to topics."
+      "text": "AI Garage leverages and applies Artificial Intelligence at scale within Mastercard and its associated business partners, providing a foundational, competitive advantage for the future."
     }
   },
   "app": {

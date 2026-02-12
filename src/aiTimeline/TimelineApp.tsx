@@ -42,10 +42,8 @@ export default function App() {
             {/* Text content positioned above background */}
             <div className="relative z-10 flex items-center justify-center px-6 md:px-16">
               <div className="max-w-3xl text-center">
-                <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-white leading-tight mb-6">
-                  {t("hero.title", "The Evolution of AI")}
-                  <br />
-                  {t("hero.dateRange", { year: new Date().getFullYear() })}
+                <h1 className="ai-timeline-hero-title">
+                  {t("hero.title", "Decades of AI evolution")}
                 </h1>
                 <p className="text-gray-100 font-sans text-lg md:text-xl leading-relaxed mb-8">
                   {t(
@@ -53,14 +51,6 @@ export default function App() {
                     "This timeline attempts to tell a brief history of artificial intelligence as we see today, from its conceptual origins in the 1960s to the present day. It highlights key milestones, breakthroughs, and events that have shaped the development and adoption of AI technologies over the decades."
                   )}
                 </p>
-                <div className="flex justify-center">
-                  <button
-                    onClick={() => setAutoScroll(!autoScroll)}
-                    className="px-6 py-3 rounded-lg font-sans font-medium text-base transition-all duration-300 bg-white hover:bg-gray-100 text-gray-900"
-                  >
-                    {autoScroll ? "⏸ Pause" : "Explore the timeline"}
-                  </button>
-                </div>
 
                 <div aria-hidden="true" style={{ height: 24 }} />
               </div>

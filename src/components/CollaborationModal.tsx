@@ -54,19 +54,13 @@ const CollaborationModal: React.FC<CollaborationModalProps> = ({ location, onClo
                 animate={{ opacity: 1, x: 0 }}
               >
                 <div className="paper-header">
-                  <h3 className="paper-title">{location.institution}</h3>
+                  <h3 className="paper-title">Collaboration Details</h3>
                   {(location.city || location.country) && (
                     <span className="paper-year">
                       {[location.city, location.country].filter(Boolean).join(', ')}
                     </span>
                   )}
                 </div>
-
-                {location.people.length > 0 && (
-                  <div className="paper-authors">
-                    <span className="author">People: {location.people.join(', ')}</span>
-                  </div>
-                )}
 
                 {location.description && <p className="paper-abstract">{location.description}</p>}
 

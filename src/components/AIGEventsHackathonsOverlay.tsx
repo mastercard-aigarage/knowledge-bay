@@ -3,17 +3,13 @@ import { useEffect, useMemo, useState } from 'react';
 import './AIGEventsHackathonsOverlay.css';
 import { content, formatTemplate } from '../content/content';
 import { resolveImagePath } from '../utils/resolveImagePath';
+import { toTitleCase } from '../utils/toTitleCase';
 
 export type AIGEventsMode = 'events' | 'hackathons';
 
 function clampIndex(index: number, length: number): number {
   if (length <= 0) return 0;
   return ((index % length) + length) % length;
-}
-
-function looksLikeUrl(value: string): boolean {
-  const v = value.trim().toLowerCase();
-  return v.startsWith('http://') || v.startsWith('https://') || v.startsWith('mailto:') || v.startsWith('tel:');
 }
 
 interface AIGEventsHackathonsOverlayProps {
@@ -103,7 +99,7 @@ const AIGEventsHackathonsOverlay: React.FC<AIGEventsHackathonsOverlayProps> = ({
         <header className="aig-events-header">
           <div className="aig-events-header-left">
             <div className="aig-events-title">{title}</div>
-            <div className="aig-events-subtitle">{subtitle}</div>
+            <div className="aig-events-subtitle">{toTitleCase(subtitle)}</div>
           </div>
 
           <button type="button" className="aig-events-close" onClick={onClose} aria-label="Close">
@@ -162,25 +158,9 @@ const AIGEventsHackathonsOverlay: React.FC<AIGEventsHackathonsOverlayProps> = ({
                         <div className="aig-events-card-content">
                           <div className="aig-events-card-text">
                             <div className="aig-events-card-name">{current.name}</div>
-                            <div className="aig-events-card-dest">{current.destination}</div>
+                            <div className="aig-events-card-dest">{toTitleCase(current.destination)}</div>
                             <div className="aig-events-card-desc">{current.description}</div>
                           </div>
-
-                          {looksLikeUrl(current.link) ? (
-                            <a
-                              className="aig-events-card-cta"
-                              href={current.link}
-                              target="_blank"
-                              rel="noreferrer"
-                              aria-label={`Open link for ${current.name}`}
-                            >
-                              {copy.openLink?.text ?? 'Open ↗'}
-                            </a>
-                          ) : (
-                            <button type="button" className="aig-events-card-cta" disabled aria-disabled="true" title="No link provided">
-                              {copy.noLink?.text ?? 'No link'}
-                            </button>
-                          )}
                         </div>
                       </motion.div>
                     )}

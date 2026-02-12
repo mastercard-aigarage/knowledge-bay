@@ -114,7 +114,8 @@
 
 /* Right Section - Cards */
 .evolution-cards-section {
-  width: min(900px, 100%);
+  /* Allow the carousel/cards to grow on large monitors. */
+  width: min(1200px, 100%);
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -311,20 +312,20 @@ html[data-heading-style='gradient'] .evolution-header h1 {
 /* Back Button */
 .back-button {
   position: fixed;
-  left: 20px;
-  top: 20px;
+  left: 35px;
+  top: 35px;
   z-index: 10;
 
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 
-  padding: 10px 12px;
+  padding: 12px 16px;
   border: 1px solid rgba(255, 170, 0, 0.16);
   background: rgba(0, 0, 0, 0.38);
   color: rgba(255, 255, 255, 0.75);
-  border-radius: 14px;
-  font-size: 14px;
+  border-radius: var(--mc-radius-pill);
+  font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   letter-spacing: 0.8px;
@@ -350,6 +351,8 @@ html[data-heading-style='gradient'] .evolution-header h1 {
   display: block;
   flex: 0 0 auto;
   opacity: 0.9;
+  width: 28px;
+  height: 28px;
 }
 
 /* Responsive Design */
@@ -390,8 +393,8 @@ html[data-heading-style='gradient'] .evolution-header h1 {
   }
 
   .back-button {
-    left: 16px;
-    top: 16px;
+    left: 35px;
+    top: 35px;
   }
 }
 
@@ -424,8 +427,8 @@ html[data-heading-style='gradient'] .evolution-header h1 {
   }
 
   .back-button {
-    left: 12px;
-    top: 12px;
+    left: 35px;
+    top: 35px;
   }
 
   .evolution-card {

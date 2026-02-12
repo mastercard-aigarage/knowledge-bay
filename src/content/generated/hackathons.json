@@ -1,26 +1,26 @@
 [
   {
-    "name": "NeurIPS Jailbreaking Competition",
-    "destination": "San Diego, California, United States",
-    "description": "Challenge LLM safety by crafting adversarial prompts that bypass model defenses. This track uncovers real-world vulnerabilities and helps build more robust, trustworthy Al systems.",
-    "link": "https://neurips.cc/Conferences/2024/CompetitionTrack",
-    "imagePath": "images/jailbreak.png",
+    "name": "NeurIPS'24 The competition for LLM and agent safety  TRACK I: Jailbreaking attack",
+    "destination": "Vancouver, Canada",
+    "description": "This competition track focuses on evaluating LLM safety by creating controlled adversarial prompts designed to reveal where model defenses may fail. By systematically probing these weaknesses, researchers can better understand real‑world vulnerabilities and develop stronger, more reliable, and more trustworthy AI systems.",
+    "link": "https://www.llmagentsafetycomp24.com",
+    "imagePath": "images/jailbreak.jpeg",
     "position": "Global Rank 2 +$3000 Prize"
   },
   {
     "name": "Kaggle Jigsaw Agile Community Rules Classification",
     "destination": "Virtual",
-    "description": "Develop models that detect Reddit comments violating community rules.The challenge tests Al's ability to understand nuanced norms and enable scalable, consistent content moderation.",
+    "description": "The competition focused on developing models that detect Reddit comments violating community rules.The challenge tests Al's ability to understand nuanced norms and enable scalable, consistent content moderation.",
     "link": "https://www.kaggle.com/competitions/jigsaw-agile-community-rules",
-    "imagePath": "images/jigsaw.png",
+    "imagePath": "images/jigsaw.jpeg",
     "position": "Rank 32/2445: Sliver Medal"
   },
   {
-    "name": "NeurIPS Social Deduction Track",
-    "destination": "San Diego, California, United States",
-    "description": "Build Al agents for social deduction games, requiring reasoning under uncertainty, deception detection, teamwork, and strategic communication in multi-agent environments.",
-    "link": "",
-    "imagePath": "",
+    "name": "NeurIPS'25 Theory-of-Mind Challenges for LLM Agents | Social Deduction Challenge",
+    "destination": "San Diego, California, USA",
+    "description": "The competition focuses on building Al agents for social deduction games, requiring reasoning under uncertainty, deception detection, teamwork, and strategic communication in multi-agent environments.",
+    "link": "https://www.mindgamesarena.com/track/social-deduction",
+    "imagePath": "images/mind.jpeg",
     "position": "Global Rank 05"
   },
   {
@@ -28,15 +28,39 @@
     "destination": "Virtual",
     "description": "Create essays that expose weaknesses in LLM-based judging systems.The track tests the robustness of automated subjective evaluation and highlights inconsistencies across different Al judges.",
     "link": "https://www.kaggle.com/competitions/llms-you-cant-please-them-all",
-    "imagePath": "images/cant-please.png",
+    "imagePath": "images/cant-please.jpeg",
     "position": "Gold Medal"
   },
   {
     "name": "Meta CRAG-MM Challenge 2025",
     "destination": "Toronto, Canada",
-    "description": "Develop multimodal Al systems that use images and external knowledge,to answer user queries. The challenge evaluates visual understanding,retrieval, and grounded reasoning for real-world assistant tasks.",
+    "description": "Develop multimodal Al systems that use images and external knowledge to answer user queries. The challenge evaluates visual understanding, retrieval, and grounded reasoning for real-world assistant tasks.",
     "link": "https://www.aicrowd.com/challenges/meta-crag-mm-challenge-2025",
-    "imagePath": "images/mm-rag.png",
+    "imagePath": "images/reasoning.jpeg",
     "position": "Rank 40 out of 500 + Poster Presentation in KDD"
+  },
+  {
+    "name": "WSDM Cup2022 - User Retention Prediction Challenge",
+    "destination": "Virtual",
+    "description": "The competition focused on predicting user retention scores for a major global video‑streaming platform with massive user activity. Retention scores indicate how many days a user will open the app within a future time window, making them crucial for understanding engagement and satisfaction.",
+    "link": "https://www.wsdm-conference.org/2022/wsdm-cup/",
+    "imagePath": "images/streaming.jpeg",
+    "position": "17th out of 991 teams"
+  },
+  {
+    "name": "KDD Cup 2021: OGB Large-Scale Challenge (OGB-LSC)",
+    "destination": "Singapore",
+    "description": "This competition was part of the OGB Large-Scale Challenge (OGB‑LSC), designed to drive the development of state‑of‑the‑art graph machine learning models for massive, real‑world datasets. It focuses on graph problems that reflect modern scale and complexity, spanning domains such as molecules, knowledge graphs, and large network structures",
+    "link": "https://ogb.stanford.edu/kddcup2021/",
+    "imagePath": "images/graph.jpeg",
+    "position": "Top 10 finish"
+  },
+  {
+    "name": "CIKM2020 AnalytiCup: COVID Retweet Prediction Competition",
+    "destination": "Galway, Ireland",
+    "description": "This competition examined how information spreads on social media during the COVID‑19 pandemic by focusing on retweet behavior on Twitter. Using the TweetsCOV19 dataset—over 8 million COVID‑19–related tweets from October 2019 to April 2020—the challenge asked participants to predict which tweets users would retweet.",
+    "link": "https://data.gesis.org/covid19challenge/",
+    "imagePath": "images/social.jpeg",
+    "position": "2nd Rank"
   }
 ]

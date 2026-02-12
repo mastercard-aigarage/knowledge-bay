@@ -31,9 +31,6 @@ const PaperModal: React.FC<PaperModalProps> = ({ location, onClose }) => {
           <div className="modal-header">
             <div>
               <h2 className="modal-title">{location.city}, {location.country}</h2>
-              <p className="modal-subtitle">
-                {location.conferences.length} conference{location.conferences.length === 1 ? '' : 's'} at this venue
-              </p>
             </div>
             <button className="close-button" onClick={onClose} aria-label="Close" title="Close">
               <span className="close-button-icon" aria-hidden="true">×</span>

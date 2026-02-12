@@ -13,22 +13,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p31",
+            "id": "p44",
             "title": "FRAUDAMMO: LARGE SCALE SYNTHETIC TRANSACTIONAL DATASET FOR PAYMENT FRAUD DETECTION",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Priyanka Chudasama, Tushar Kadam, Rajat Patel, Aakarsh Malhotra and Mangam Manoj"
-            ],
-            "abstract": "",
-            "year": 2023,
-            "keywords": []
-          },
-          {
-            "id": "p32",
-            "title": "AUTO-TAB TRANSFORMER: HIERARCHICAL TRANSFORMERS FOR SELF AND SEMI SUPERVISED LEARNING IN TABULAR DATA",
-            "topic": "Others",
-            "authors": [
-              "Akshay Sethi, Sonia Gupta, Ayush Agarwal, Nancy Agrawal, and Siddhartha Asthana"
+              "Priyanka Chudasama, Tushar Kadam, Rajat Patel, Aakarsh Malhotra,  Mangam Manoj"
             ],
             "abstract": "",
             "year": 2023,
@@ -36,17 +25,28 @@
           },
           {
             "id": "p45",
-            "title": "FraudAmmo: Large Scale Synthetic Transactional Dataset for Payment Fraud Detection",
-            "topic": "Applications in finance",
+            "title": "AUTO-TAB TRANSFORMER: HIERARCHICAL TRANSFORMERS FOR SELF AND SEMI SUPERVISED LEARNING IN TABULAR DATA",
+            "topic": "Others",
             "authors": [
-              "Karthikeswaren R, Kanishka Kayathwal, Hardik Wadhwa and Gaurav Dhama"
+              "Akshay Sethi, Sonia Gupta, Ayush Agarwal, Nancy Agrawal,  Siddhartha Asthana"
             ],
             "abstract": "",
             "year": 2023,
             "keywords": []
           },
           {
-            "id": "p46",
+            "id": "p57",
+            "title": "FraudAmmo: Large Scale Synthetic Transactional Dataset for Payment Fraud Detection",
+            "topic": "Applications in Finance",
+            "authors": [
+              "Karthikeswaren R, Kanishka Kayathwal, Hardik Wadhwa,  Gaurav Dhama"
+            ],
+            "abstract": "",
+            "year": 2023,
+            "keywords": []
+          },
+          {
+            "id": "p58",
             "title": "TETRAA - Trained and Selective Transmutation of Encoder-based Adversarial Attack",
             "topic": "Others",
             "authors": [
@@ -74,11 +74,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p58",
+            "id": "p13",
             "title": "Label-Value Extraction from Documents using Co-SSL Framework",
             "topic": "Machine Learning",
             "authors": [
-              "Sara Sai Abhishek, Maneet Singh, Bhanupriya Pegu, and Karamjit Singh"
+              "Sara Sai Abhishek, Maneet Singh, Bhanupriya Pegu,  Karamjit Singh"
             ],
             "abstract": "",
             "year": 2021,
@@ -102,25 +102,53 @@
         "date": "",
         "papers": [
           {
-            "id": "p76",
+            "id": "p29",
             "title": "Transitioning from Real to Synthetic Data: Quanitying the Bias in Model ​​​​​​​",
             "topic": "Responsible AI",
             "authors": [
-              "Aman Gupta, Deepak Bhatt, and Anubha Pandey"
+              "Aman Gupta, Deepak Bhatt,  Anubha Pandey"
             ],
             "abstract": "",
             "year": 2021,
             "keywords": []
           },
           {
-            "id": "p79",
+            "id": "p32",
             "title": "Pandemic Spread Prediction and Healthcare Preparedness Through Financial and Mobility Data",
             "topic": "Others",
             "authors": [
-              "Nidhi Mulay, Vikas Bishnoi, Himanshi Charotia, Siddhartha Asthana, Gaurav Dhama, and Ankur Arora"
+              "Nidhi Mulay, Vikas Bishnoi, Himanshi Charotia, Siddhartha Asthana, Gaurav Dhama,  Ankur Arora"
             ],
             "abstract": "",
             "year": 2021,
+            "keywords": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "25.0830,-77.3210",
+    "city": "Nassau",
+    "country": "Bahamas",
+    "lat": 25.083,
+    "lng": -77.321,
+    "conferences": [
+      {
+        "conferenceId": "ICMLA",
+        "year": 2022,
+        "conferenceName": "DataPerf2022 Workshop in conjunction with International Conference on Machine Learning (ICML)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p37",
+            "title": "FairGen: Fair Synthetic Data Generation",
+            "topic": "Responsible AI",
+            "authors": [
+              "Himanshu Chaudhary, Bhushan Chaudhari, Aakash Agarwal, Kamna Meena, Tanmoy Bhowmik"
+            ],
+            "abstract": "",
+            "year": 2022,
             "keywords": []
           }
         ]
@@ -141,7 +169,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p2",
+            "id": "p76",
             "title": "SALE-MLP: Structure Aware Latent Embeddings for GNN to Graph-free MLP Distillation‎",
             "topic": "Graph Learning",
             "authors": [
@@ -160,33 +188,33 @@
         "date": "",
         "papers": [
           {
-            "id": "p71",
+            "id": "p24",
             "title": "Self-Training with Ensemble of Teacher Models",
             "topic": "Machine Learning",
             "authors": [
-              "Soumyadeep Ghosh, Sanjay Kumar, Janu Verma, and Awanish Kumar"
+              "Soumyadeep Ghosh, Sanjay Kumar, Janu Verma,  Awanish Kumar"
             ],
             "abstract": "",
             "year": 2021,
             "keywords": []
           },
           {
-            "id": "p72",
+            "id": "p25",
             "title": "Semi-supervised Learning for Marked Temporal Point Processes",
             "topic": "Sequential Modelling",
             "authors": [
-              "Shivshankar Reddy, Anand Vir Singh Chauhan, Maneet Singh, and Karamjit Singh"
+              "Shivshankar Reddy, Anand Vir Singh Chauhan, Maneet Singh,  Karamjit Singh"
             ],
             "abstract": "",
             "year": 2021,
             "keywords": []
           },
           {
-            "id": "p74",
+            "id": "p27",
             "title": "Intent2Vec: Representation Learning of Cardholder and Merchant intent from Temporal Interaction Sequences for Fraud Detection",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Nitish Kumar, Shinyjohn Shaju, Kanishka Kayathwal, Deepak Chaurasiya, Kushagra Agarwal, Alok Singh, Siddhartha Asthana and Ankur Arora"
+              "Nitish Kumar, Shinyjohn Shaju, Kanishka Kayathwal, Deepak Chaurasiya, Kushagra Agarwal, Alok Singh, Siddhartha Asthana,  Ankur Arora"
             ],
             "abstract": "",
             "year": 2021,
@@ -210,18 +238,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p15",
-            "title": "KDD cup hackathon",
-            "topic": "Others",
-            "authors": [
-              "Harshvardhan Etcherla, Aditi Rai, Rakshit Rao, Alekhya Bhatraju, and Diksha Shrivastava"
-            ],
-            "abstract": "",
-            "year": 2025,
-            "keywords": []
-          },
-          {
-            "id": "p3",
+            "id": "p77",
             "title": "Tag2M- A Task-Agnostic Knowledge Distillation Framework for Distilling Gnn to MLP‎",
             "topic": "Graph Learning",
             "authors": [
@@ -232,11 +249,22 @@
             "keywords": []
           },
           {
-            "id": "p7",
+            "id": "p81",
             "title": "FgenXAI: A Generative AI Framework for Explainable Financial Records Summarization",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
               "Rakshit Rao, Manoj Mangam, Shivam Arora, Raahul Nallasamy, Sherin Bharathiy M, Aakarsh Malhotra, Alok Mani Singh"
+            ],
+            "abstract": "",
+            "year": 2025,
+            "keywords": []
+          },
+          {
+            "id": "p89",
+            "title": "KDD cup hackathon",
+            "topic": "Others",
+            "authors": [
+              "Harshvardhan Etcherla, Aditi Rai, Rakshit Rao, Alekhya Bhatraju,  Diksha Shrivastava"
             ],
             "abstract": "",
             "year": 2025,
@@ -260,7 +288,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p19",
+            "id": "p64",
             "title": "LocaRank: Merchant Store Location ranking in a Geo-Spatial Graph with GNNs",
             "topic": "Graph Learning",
             "authors": [
@@ -279,11 +307,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p67",
+            "id": "p20",
             "title": "Simultaneous Improvement of ML Model Fairness and Performance by Identifying Bias in Data",
             "topic": "Responsible AI",
             "authors": [
-              "Aakash Agarwal, Bhushan Chaudhari, and Tanmoy Bhowmik"
+              "Aakash Agarwal, Bhushan Chaudhari,  Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2021,
@@ -307,11 +335,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p50",
+            "id": "p35",
             "title": "FLiB: Fair Link Prediction in Bipartite Network",
             "topic": "Responsible AI",
             "authors": [
-              "Piyush, Nitish Kumar, Sangam Verma, Karamjit Singh and Pranav Poduval"
+              "Piyush, Nitish Kumar, Sangam Verma, Karamjit Singh,  Pranav Poduval"
             ],
             "abstract": "",
             "year": 2022,
@@ -335,11 +363,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p78",
+            "id": "p31",
             "title": "DEDD: Deep Encoder with Dual Decoder Architecture for Stability and Specificity Preserving Encoding and Translation of Embedding between Domains",
             "topic": "Machine Learning",
             "authors": [
-              "Rajesh Kumar Ranjan, Debasmita Das, Ram Ganesh V., Yatin Katyal, and Tanmoy Bhowmik"
+              "Rajesh Kumar Ranjan, Debasmita Das, Ram Ganesh V., Yatin Katyal,  Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2021,
@@ -354,11 +382,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p77",
+            "id": "p30",
             "title": "Server-Language Processing:  A Semi-Supervised approach to Server Failure Detection",
             "topic": "Others",
             "authors": [
-              "Sonali Syngal, Sangam Verma, Kandukuri Karthik, Yatin Katyal, and Soumyadeep Ghosh"
+              "Sonali Syngal, Sangam Verma, Kandukuri Karthik, Yatin Katyal,  Soumyadeep Ghosh"
             ],
             "abstract": "",
             "year": 2021,
@@ -382,11 +410,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p38",
+            "id": "p50",
             "title": "STUDY OF TOPOLOGY BIAS IN GNN-BASED KNOWLEDGE GRAPHS ALGORITHMS",
             "topic": "Responsible AI",
             "authors": [
-              "Anil Surisetty, Deepak Chaurasiya, Aakarsh Malhotra, Alok Singh, Siddharth Yerramsetty, and Liyana Sahir from AI Garage and Sudipta Modak and Prof. Esam Abdel-Raheem"
+              "Anil Surisetty, Deepak Chaurasiya, Aakarsh Malhotra, Alok Singh, Siddharth Yerramsetty,  Liyana Sahir from AI Garage,  Sudipta Modak,  Prof. Esam Abdel-Raheem"
             ],
             "abstract": "",
             "year": 2023,
@@ -410,7 +438,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p66",
+            "id": "p41",
             "title": "RePS: Relation, Position and Structure aware Entity Alignment",
             "topic": "Others",
             "authors": [
@@ -438,11 +466,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p80",
+            "id": "p33",
             "title": "Deep Learning based Time Series Forecasting",
             "topic": "Sequential Modelling",
             "authors": [
-              "Kushagra Agarwal, Lalasa Dheekollu, Gaurav Dhama, Ankur Arora, Siddhartha Asthana, and Tanmoy Bhowmik"
+              "Kushagra Agarwal, Lalasa Dheekollu, Gaurav Dhama, Ankur Arora, Siddhartha Asthana,  Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2021,
@@ -466,7 +494,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p24",
+            "id": "p69",
             "title": "GT2MLP: Attention-Aided Distillation from Graph Transformer to MLP for Graph Structure-Independent Inference",
             "topic": "Graph Learning",
             "authors": [
@@ -477,7 +505,7 @@
             "keywords": []
           },
           {
-            "id": "p27",
+            "id": "p72",
             "title": "Bias Mitigation through Proxy Sensitive Attribute Label Generation",
             "topic": "Responsible AI",
             "authors": [
@@ -488,7 +516,7 @@
             "keywords": []
           },
           {
-            "id": "p28",
+            "id": "p73",
             "title": "A Scalable Approach to Covariate and Concept Drift Management via Adaptive Data Segmentation",
             "topic": "Machine Learning",
             "authors": [
@@ -507,11 +535,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p82",
+            "id": "p3",
             "title": "Deep Learning Algorithm to Rank-Order Resumes using Discriminative Embedding Space Session Track",
             "topic": "Machine Learning",
             "authors": [
-              "Sonali Syngal and Debasmita Das"
+              "Sonali Syngal,  Debasmita Das"
             ],
             "abstract": "",
             "year": 2020,
@@ -531,33 +559,33 @@
       {
         "conferenceId": "CODS",
         "year": 2023,
-        "conferenceName": "CODS Workshop at COMAD conference (CODS)",
+        "conferenceName": "CODS Workshop at COMAD conference (CODS COMAD)",
         "date": "",
         "papers": [
           {
-            "id": "p40",
+            "id": "p52",
             "title": "SGD-MLP: Structure Generation and Distillation using a graph free MLP",
             "topic": "Graph Learning",
             "authors": [
-              "Sanjay Kumar Patnala, Sumedh B G, Akshay Sethi, Sonia Gupta and Siddhartha Asthana"
+              "Sanjay Kumar Patnala, Sumedh B G, Akshay Sethi, Sonia Gupta,  Siddhartha Asthana"
             ],
             "abstract": "",
             "year": 2023,
             "keywords": []
           },
           {
-            "id": "p41",
+            "id": "p53",
             "title": "HierTGAN: Hierarchical Time Series Generation with  Aggregation Constraints",
             "topic": "Sequential Modelling",
             "authors": [
-              "Srini Rohan Gujulla Leel, Vikrant Dey, Puspita Majumdar and Ankit Khairkar."
+              "Srini Rohan Gujulla Leel, Vikrant Dey, Puspita Majumdar,  Ankit Khairkar."
             ],
             "abstract": "",
             "year": 2023,
             "keywords": []
           },
           {
-            "id": "p42",
+            "id": "p54",
             "title": "ACloser look at Consistency Regularization for Semi-Supervised Learning",
             "topic": "Machine Learning",
             "authors": [
@@ -585,22 +613,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p29",
+            "id": "p74",
             "title": "GraTeD-MLP: Efficient Node Classification via Graph Transformer Distillation to MLP",
             "topic": "Graph Learning",
             "authors": [
               "Sarthak Malik, Aditi Rai, Ram Ganesh V, Himank Sehgal, Akshay Sethi, Aakarsh Malhotra"
-            ],
-            "abstract": "",
-            "year": 2024,
-            "keywords": []
-          },
-          {
-            "id": "p48",
-            "title": "GraTeD-MLP: Efficient Node Classification via Graph Transformer Distillation to MLP",
-            "topic": "Graph Learning",
-            "authors": [
-              "Sarthak Malik, Aditi Rai, Ram V. Ganesh, Himank Sehgal, Akshay Sethi, Aakarsh Malhotra"
             ],
             "abstract": "",
             "year": 2024,
@@ -615,11 +632,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p39",
+            "id": "p51",
             "title": "INFRANET: Forecasting intermittent time series using DeepNet with parameterized conditionaldemand and size distribution",
             "topic": "Sequential Modelling",
             "authors": [
-              "Diksha Shrivastava, Sarthak Pujari, Yatin Katyal, Siddhartha Asthana, Chandrudu K, and Aakashdeep Singh"
+              "Diksha Shrivastava, Sarthak Pujari, Yatin Katyal, Siddhartha Asthana, Chandrudu K,  Aakashdeep Singh"
             ],
             "abstract": "",
             "year": 2023,
@@ -634,11 +651,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p64",
+            "id": "p19",
             "title": "MoDest: Multi-module Design Validation for Documents",
             "topic": "Machine Learning",
             "authors": [
-              "Bhanupriya Pegu, Maneet Singh, Kamal Kant, Karamjit Singh, and Tanmoy Bhowmik"
+              "Bhanupriya Pegu, Maneet Singh, Kamal Kant, Karamjit Singh,  Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2021,
@@ -653,22 +670,22 @@
         "date": "",
         "papers": [
           {
-            "id": "p51",
+            "id": "p6",
             "title": "TeGraF: Temporal and Graph based Fraudulent Transaction Detection Framework",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Shivshankar Reddy, Pranav Poduval, Anand Vir Singh Chauhan, Maneet Singh, Sangam Verma, Karamjit Singh, and Tanmoy Bhowmik"
+              "Shivshankar Reddy, Pranav Poduval, Anand Vir Singh Chauhan, Maneet Singh, Sangam Verma, Karamjit Singh,  Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2021,
             "keywords": []
           },
           {
-            "id": "p52",
+            "id": "p7",
             "title": "AuthSHAP - Authentication Vulnerability Detection on Tabular Data in Black Box Setting",
             "topic": "Machine Learning",
             "authors": [
-              "Debasmita Das, Yatin Katyal, Rajesh Kumar Ranjan, Ram Ganesh V, and Rohit Bhattacharya"
+              "Debasmita Das, Yatin Katyal, Rajesh Kumar Ranjan, Ram Ganesh V,  Rohit Bhattacharya"
             ],
             "abstract": "",
             "year": 2021,
@@ -692,29 +709,29 @@
         "date": "",
         "papers": [
           {
-            "id": "p12",
+            "id": "p86",
             "title": "Temporal Boosting for Incremental Tree-based Learning on Tabular Data",
             "topic": "Sequential Modelling",
             "authors": [
-              "Rahul, Payal, Bhanu, Maneet, Josh, and Chris"
+              "Rahul Gupta, Payal Pote, Bhanupriya Pegu , Maneet Singh, Josh Allbright , Chris Merz"
             ],
             "abstract": "",
             "year": 2025,
             "keywords": []
           },
           {
-            "id": "p13",
+            "id": "p87",
             "title": "Time-dependent Check-in Attribute Prediction via Domain-aware CSMTPP",
             "topic": "Sequential Modelling",
             "authors": [
-              "Anand, Ushmita, Maneet"
+              "Anand Vir Singh Chauhan , Ushmita Pareek, Maneet Singh"
             ],
             "abstract": "",
             "year": 2025,
             "keywords": []
           },
           {
-            "id": "p14",
+            "id": "p88",
             "title": "Can curriculum learning overcome structural disparity in MP-GNNs?",
             "topic": "Graph Learning",
             "authors": [
@@ -725,11 +742,11 @@
             "keywords": []
           },
           {
-            "id": "p16",
+            "id": "p90",
             "title": "Bias and Fairness",
             "topic": "Responsible AI",
             "authors": [
-              "Puspita, Balraj, Nitendra, Ankur"
+              "Puspita Majumdar, Balraj Prajesh, Nitendra Rajput, Ankur Arora"
             ],
             "abstract": "",
             "year": 2025,
@@ -753,22 +770,22 @@
         "date": "",
         "papers": [
           {
-            "id": "p53",
+            "id": "p8",
             "title": "MeTGAN: Memory efficient Tabular GAN for high cardinality categorical datasets",
             "topic": "Machine Learning",
             "authors": [
-              "Shreyansh Singh, Kanishka Kayathwal, Hardik Wadhwa and Gaurav Dhama"
+              "Shreyansh Singh, Kanishka Kayathwal, Hardik Wadhwa,  Gaurav Dhama"
             ],
             "abstract": "",
             "year": 2021,
             "keywords": []
           },
           {
-            "id": "p54",
+            "id": "p9",
             "title": "A comparative study on Transformers for Word Sense Disambiguation",
             "topic": "Machine Learning",
             "authors": [
-              "Avi Chawla, Nidhi Mulay, Vikas Bishnoi, Gaurav Dhama and A.K. Singh"
+              "Avi Chawla, Nidhi Mulay, Vikas Bishnoi, Gaurav Dhama,  A.K. Singh"
             ],
             "abstract": "",
             "year": 2021,
@@ -792,11 +809,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p83",
+            "id": "p4",
             "title": "Word and Graph Embeddings for COVID-19 Retweet Prediction",
             "topic": "Machine Learning",
             "authors": [
-              "Tam T. Nguyen, Karamjit Singh, Sangam Verma, Hardik Wadhwa, Siddharth Vimal, Lalasa Dheekollu, Sheng Jie Lui, Divyansh Gupta, Dong Yang Jin, and Zha Wei"
+              "Tam T. Nguyen, Karamjit Singh, Sangam Verma, Hardik Wadhwa, Siddharth Vimal, Lalasa Dheekollu, Sheng Jie Lui, Divyansh Gupta, Dong Yang Jin,  Zha Wei"
             ],
             "abstract": "",
             "year": 2020,
@@ -820,11 +837,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p5",
+            "id": "p79",
             "title": "FairFusion: Debiasing Diffusion Models for Fair Synthetic Tabular Data Generation",
             "topic": "Responsible AI",
             "authors": [
-              "Ruma Roy, Darshika Tiwari, and Anubha Pandey"
+              "Ruma Roy, Darshika Tiwari, Anubha Pandey"
             ],
             "abstract": "",
             "year": 2025,
@@ -839,11 +856,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p6",
+            "id": "p80",
             "title": "BiGReachFRauD: Bipartite Graph Representation Learning using Breached Sources for Financial Fraud Detection",
             "topic": "Graph Learning",
             "authors": [
-              "Manasvi, Suhas, Deepanshu, Hariom, and Yatin"
+              "Manasvi Aggarwal, Suhas Power, Deepanshu Bagotia, Hariom Chaudhry, Yatin Katyal"
             ],
             "abstract": "",
             "year": 2025,
@@ -867,9 +884,9 @@
         "date": "",
         "papers": [
           {
-            "id": "p22",
+            "id": "p67",
             "title": "Event-aware Multi-component (EMl) Loss for Fraud Detection",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
               "Tarun Somavarapu, Anand Vir Singh, Maneet Singh, Shraddha Pandey, Shantanu Verma, Kushagra Agarwal"
             ],
@@ -878,7 +895,7 @@
             "keywords": []
           },
           {
-            "id": "p23",
+            "id": "p68",
             "title": "Fair Latent Representation Learning with Adaptive Reweighing",
             "topic": "Responsible AI",
             "authors": [
@@ -906,7 +923,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p33",
+            "id": "p46",
             "title": "LEARNING REPRESENTATIONS FOR BIPARTITE GRAPHS USING MULTI-TASK SELF-SUPERVISED LEARNING",
             "topic": "Graph Learning",
             "authors": [
@@ -917,41 +934,50 @@
             "keywords": []
           },
           {
-            "id": "p34",
+            "id": "p47",
             "title": "CONTRASTIVE REPRESENTATION THROUGH ANGLE AND DISTANCE BASED LOSS FOR PARTIAL LABLE LEARNING",
             "topic": "Machine Learning",
             "authors": [
-              "Priyanka Chudasama, Tushar Kadam, Rajat Patel, Aakarsh Malhotra and Mangam Manoj"
+              "Priyanka Chudasama, Tushar Kadam, Rajat Patel, Aakarsh Malhotra,  Mangam Manoj"
             ],
             "abstract": "",
             "year": 2023,
             "keywords": []
           },
           {
-            "id": "p35",
+            "id": "p48",
             "title": "NODE REPRESENTATION LEARNING FOR BIPARTITE GRAPHS VIA MUTUAL INFORMATION MAXIMIZATION",
             "topic": "Graph Learning",
             "authors": [
-              "Pranav Poduval, Gaurav Oberoi, Sangam Verma, Ayush Agarwal, Karamjit Singh and Siddhartha Asthana"
+              "Pranav Poduval, Gaurav Oberoi, Sangam Verma, Ayush Agarwal, Karamjit Singh,  Siddhartha Asthana"
             ],
             "abstract": "",
             "year": 2023,
             "keywords": []
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "id": "34.6937,135.5023",
+    "city": "Osaka",
+    "country": "Japan",
+    "lat": 34.6937,
+    "lng": 135.5023,
+    "conferences": [
       {
-        "conferenceId": "PKDD",
+        "conferenceId": "PAKDD",
         "year": 2023,
-        "conferenceName": "Principles and Practice of Knowledge Discovery in Databases (PKDD)",
+        "conferenceName": "Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD)",
         "date": "",
         "papers": [
           {
-            "id": "p36",
-            "title": "TRAINED AND SELECTIVE TRANSMUTATION OF ENCODER-BASED ADVERSARIAL ATTACK",
-            "topic": "Others",
+            "id": "p59",
+            "title": "GroupMixNorm Layer for Learning Fair Models",
+            "topic": "Responsible AI",
             "authors": [
-              "Sarthak Malik, Himanshi Charotia and Gaurav Dhama"
+              "Anubha Pandey, Aditi Rai, Maneet Singh, Deepak Bhatt, Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2023,
@@ -975,14 +1001,42 @@
         "date": "",
         "papers": [
           {
-            "id": "p20",
+            "id": "p65",
             "title": "MEGA: Multi-Encoder GNN Architecture for stronger task collaboration and generalization",
             "topic": "Graph Learning",
             "authors": [
-              "Faraz Khoshbakhtian, Gaurav Oberoi, Dionne Aleman, and Siddhartha Asthana"
+              "Faraz Khoshbakhtian, Gaurav Oberoi, Dionne Aleman,  Siddhartha Asthana"
             ],
             "abstract": "",
             "year": 2024,
+            "keywords": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "35.7595,-5.8339",
+    "city": "Tangier",
+    "country": "Morocco",
+    "lat": 35.7595,
+    "lng": -5.8339,
+    "conferences": [
+      {
+        "conferenceId": "AISTATS",
+        "year": 2026,
+        "conferenceName": "International Conference on Artificial Intelligence and Statistics (AISTATS)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p92",
+            "title": "TAS-EGNN: Task-Aware Spectral Ego-Graphs for Efficient GNNs-Based Classification",
+            "topic": "Graph Learning",
+            "authors": [
+              "Mebarka Allaoui, Sonia Gupta, Rachid Hedjam"
+            ],
+            "abstract": "",
+            "year": 2026,
             "keywords": []
           }
         ]
@@ -1003,7 +1057,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p49",
+            "id": "p34",
             "title": "A Semi-Supervised Vulnerability Management System",
             "topic": "Others",
             "authors": [
@@ -1031,11 +1085,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p68",
+            "id": "p21",
             "title": "Effects of stimulus checks on spending patterns of different economic groups",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Nidhi Mulay, Vikas Bishnoi, Yatin Katyal, Mohsen Bahrami, Esteban Moro, Ankur Saraswat, and Alex Pentland"
+              "Nidhi Mulay, Vikas Bishnoi, Yatin Katyal, Mohsen Bahrami, Esteban Moro, Ankur Saraswat,  Alex Pentland"
             ],
             "abstract": "",
             "year": 2021,
@@ -1059,11 +1113,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p4",
+            "id": "p78",
             "title": "Prodem: Proactive Detection of Model Degradation in Financial Fraud Prediction Under Label Delay",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Akshay Sethi, Priyanshi Gupta, Sparsh Kansotia, Kamal Kant, and Nitish Srivasatava"
+              "Akshay Sethi, Priyanshi Gupta, Sparsh Kansotia, Kamal Kant, Nitish Srivasatava"
             ],
             "abstract": "",
             "year": 2025,
@@ -1087,22 +1141,22 @@
         "date": "",
         "papers": [
           {
-            "id": "p8",
+            "id": "p82",
             "title": "Towards Equitable Coreset Selection: Addressing Challenges Under Class Imbalance",
             "topic": "Machine Learning",
             "authors": [
-              "Liyana Sahir, Anugu Namratha Reddy, B Srinath Achary, Ashutosh Sharma, Krisha Shah, Sonia Gupta and Siddhartha Asthana"
+              "Liyana Sahir, Anugu Namratha Reddy, B Srinath Achary, Ashutosh Sharma, Krisha Shah, Sonia Gupta, Siddhartha Asthana"
             ],
             "abstract": "",
             "year": 2025,
             "keywords": []
           },
           {
-            "id": "p9",
+            "id": "p83",
             "title": "EvenOddML: Even and Odd Aggregation with Multi-Level Contrastive Learning for Bipartite Graph",
             "topic": "Graph Learning",
             "authors": [
-              "Manasvi Aggarwal, Jahnavi Methukumalli, Deepanshu Bagotia and Suhas Power"
+              "Manasvi Aggarwal, Jahnavi Methukumalli, Deepanshu Bagotia, Suhas Power"
             ],
             "abstract": "",
             "year": 2025,
@@ -1120,24 +1174,43 @@
     "lng": 103.8198,
     "conferences": [
       {
+        "conferenceId": "AAAI",
+        "year": 2026,
+        "conferenceName": "International Conference on Artificial Intelligence (AAAI)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p93",
+            "title": "Kernelized Edge Attention: Addressing Semantic Attention Blurring in Temporal Graph Neural Networks",
+            "topic": "Graph Learning",
+            "authors": [
+              "Govind Waghmare, Srini Rohan, Nikhil Tumbde, Sumedh, Sonia Gupta, Srikantha Bedathur"
+            ],
+            "abstract": "",
+            "year": 2026,
+            "keywords": []
+          }
+        ]
+      },
+      {
         "conferenceId": "ICAIF",
         "year": 2025,
         "conferenceName": "ACM International Conference on AI in Finance (ICAIF)",
         "date": "",
         "papers": [
           {
-            "id": "p10",
+            "id": "p84",
             "title": "Unmasking Bias in Financial AI: A Robust Framework for Evaluating and Mitigating Hidden Biases in LLMs",
             "topic": "Responsible AI",
             "authors": [
-              "Shresth, Balraj, Raghavendra, Hrishikesh, Puspita"
+              "Shresth Mehrotra , Balraj Prajesh, Raghavendra P, Hrishikesh Kambale, Puspita Majumdar"
             ],
             "abstract": "",
             "year": 2025,
             "keywords": []
           },
           {
-            "id": "p11",
+            "id": "p85",
             "title": "BMI-GP: Unsupervised Breach Merchant Identification via Adaptive Graph Pruning",
             "topic": "Graph Learning",
             "authors": [
@@ -1156,22 +1229,22 @@
         "date": "",
         "papers": [
           {
-            "id": "p70",
+            "id": "p23",
             "title": "Exploring Generative Data Augmentation in Multivariate Time Series Forecasting: Opportunities and Challenges",
             "topic": "Sequential Modelling",
             "authors": [
-              "Ankur Debnath, Govind Waghmare, Hardik Wadhwa, Siddhartha Asthana, and Ankur Arora"
+              "Ankur Debnath, Govind Waghmare, Hardik Wadhwa, Siddhartha Asthana,  Ankur Arora"
             ],
             "abstract": "",
             "year": 2021,
             "keywords": []
           },
           {
-            "id": "p75",
+            "id": "p28",
             "title": "Application of Reinforcement Learning to Payment Fraud",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Siddharth Vimal, Kanishka Kayathwal, Hardik Wadhwa, and Gaurav Dhama"
+              "Siddharth Vimal, Kanishka Kayathwal, Hardik Wadhwa,  Gaurav Dhama"
             ],
             "abstract": "",
             "year": 2021,
@@ -1195,11 +1268,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p61",
+            "id": "p16",
             "title": "CuRL: Coupled Representation Learning of Cards and Merchants to detect Transaction Frauds",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Maitrey Gramopadhye*, Shreyansh Singh*, Kushagra Agarwal, Nitish Srivasatava, Alok Mani Singh, Siddhartha Asthana, and Ankur Arora"
+              "Maitrey Gramopadhye*, Shreyansh Singh*, Kushagra Agarwal, Nitish Srivasatava, Alok Mani Singh, Siddhartha Asthana,  Ankur Arora"
             ],
             "abstract": "",
             "year": 2021,
@@ -1223,11 +1296,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p37",
+            "id": "p49",
             "title": "LoKI: MONEY LAUNDERING REPORT GENERATION VIA LOGICAL TABLE-TO-TEXT USING META LEARNING\"",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Ram Ganesh V, Harika CM, Debasmita Das, Rajesh Ranjan Kumar, and Siddhartha Asthana"
+              "Ram Ganesh V, Harika CM, Debasmita Das, Rajesh Ranjan Kumar,  Siddhartha Asthana"
             ],
             "abstract": "",
             "year": 2023,
@@ -1251,11 +1324,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p55",
+            "id": "p10",
             "title": "Improving the performance of Transformer Context Encoders for NER",
             "topic": "Machine Learning",
             "authors": [
-              "Avi Chawla, Nidhi Mulay, Vikas Bishnoi and Gaurav Dhama"
+              "Avi Chawla, Nidhi Mulay, Vikas Bishnoi,  Gaurav Dhama"
             ],
             "abstract": "",
             "year": 2021,
@@ -1279,7 +1352,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p17",
+            "id": "p62",
             "title": "CPa-WAC: Constellation Partitioning-based Scalable Weighted Aggregation Composition for Knowledge Graph Embedding",
             "topic": "Graph Learning",
             "authors": [
@@ -1307,7 +1380,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p18",
+            "id": "p63",
             "title": "CASH via Optimal Diversity for Ensemble Learning",
             "topic": "Machine Learning",
             "authors": [
@@ -1335,22 +1408,22 @@
         "date": "",
         "papers": [
           {
-            "id": "p60",
+            "id": "p15",
             "title": "Deviation-based Marked Temporal Point Process for Marker Prediction",
             "topic": "Sequential Modelling",
             "authors": [
-              "Anand Vir Singh Chauhan, Shivshankar Reddy, Maneet Singh, Karamjit Singh, and Tanmoy Bhowmik"
+              "Anand Vir Singh Chauhan, Shivshankar Reddy, Maneet Singh, Karamjit Singh,  Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2021,
             "keywords": []
           },
           {
-            "id": "p69",
+            "id": "p22",
             "title": "Adversarial Generation of Temporal Data: A Critique on Fidelity of Synthetic Data",
             "topic": "Sequential Modelling",
             "authors": [
-              "Ankur Debnath, Nitish Gupta, Govind Waghmare, Hardik Wadhwa, Siddhartha Asthana, and Ankur Arora"
+              "Ankur Debnath, Nitish Gupta, Govind Waghmare, Hardik Wadhwa, Siddhartha Asthana,  Ankur Arora"
             ],
             "abstract": "",
             "year": 2021,
@@ -1374,11 +1447,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p84",
+            "id": "p5",
             "title": "Limitations and Applicability of GANs in Banking Domain",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Anubha Pandey. Deepak Bhatt, and Tanmoy Bhowmik"
+              "Anubha Pandey. Deepak Bhatt,  Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2020,
@@ -1402,11 +1475,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p73",
+            "id": "p26",
             "title": "Table Structure Recognition using CoDec Encoder-Decoder",
             "topic": "Machine Learning",
             "authors": [
-              "Bhanupriya Pegu, Maneet Singh, Aakash Agarwal, Aniruddha Mitra, and Karamjit Singh"
+              "Bhanupriya Pegu, Maneet Singh, Aakash Agarwal, Aniruddha Mitra,  Karamjit Singh"
             ],
             "abstract": "",
             "year": 2021,
@@ -1417,49 +1490,27 @@
     ]
   },
   {
-    "id": "34.1478,-118.1445",
-    "city": "Pasadena",
-    "country": "United States",
-    "lat": 34.1478,
-    "lng": -118.1445,
+    "id": "33.7520,-84.3870",
+    "city": "Atlanta",
+    "country": "USA",
+    "lat": 33.752,
+    "lng": -84.387,
     "conferences": [
       {
-        "conferenceId": "ICMLA",
-        "year": 2021,
-        "conferenceName": "IEEE International Conference on Machine Learning and Applications (ICMLA)",
+        "conferenceId": "CIKM",
+        "year": 2022,
+        "conferenceName": "ACM International Conference on Information and Knowledge Management (CIKM)",
         "date": "",
         "papers": [
           {
-            "id": "p56",
-            "title": "Evolutionary adversarial attacks on Payment Systems",
-            "topic": "Machine Learning",
+            "id": "p39",
+            "title": "Modeling Inter-Dependence Between Time and Mark in Multivariate Temporal Point Processes",
+            "topic": "Sequential Modelling",
             "authors": [
-              "Nishant Kumar, Siddharth Vimal, Kanishka Kayathwal, Gaurav Dhama"
+              "Govind Waghmare, Ankur Debnath, Siddhartha Asthana, Aakarsh Malhotra"
             ],
             "abstract": "",
-            "year": 2021,
-            "keywords": []
-          },
-          {
-            "id": "p57",
-            "title": "Modelling Approaches for Silent Attrition Prediction in Payment Networks",
-            "topic": "Machine Learning",
-            "authors": [
-              "Lalasa Dheekollu, Hardik Wadhwa, Siddharth Vimal, Anubhav Gupta, Siddhartha Asthana, Ankur Arora, and Smriti Gupta"
-            ],
-            "abstract": "",
-            "year": 2021,
-            "keywords": []
-          },
-          {
-            "id": "p59",
-            "title": "Temporal Debiasing using Adversarial Loss based GNN Architecture for Crypto Fraud Detection",
-            "topic": "Applications in finance",
-            "authors": [
-              "Aditya Singh, Anubhav Gupta, Hardik Wadhwa, Siddhartha Asthana, and Ankur Arora"
-            ],
-            "abstract": "",
-            "year": 2021,
+            "year": 2022,
             "keywords": []
           }
         ]
@@ -1480,18 +1531,18 @@
         "date": "",
         "papers": [
           {
-            "id": "p21",
+            "id": "p66",
             "title": "Progressive Label Disambiguation for Partial Label Learning in Homogeneous Graphs",
             "topic": "Graph Learning",
             "authors": [
-              "Rajat Patel, Aakarsh Malhotra, Sudipta Modak, and Siddharth Yerramsetty"
+              "Rajat Patel, Aakarsh Malhotra, Sudipta Modak,  Siddharth Yerramsetty"
             ],
             "abstract": "",
             "year": 2024,
             "keywords": []
           },
           {
-            "id": "p30",
+            "id": "p75",
             "title": "Progressive Label Disambiguation for Partial Label Learning in Homogeneous Graphs",
             "topic": "Graph Learning",
             "authors": [
@@ -1519,11 +1570,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p63",
+            "id": "p18",
             "title": "​​​​​​​Med-Dynamic Meta Learning - A multi-layered representation to identify provider fraud in healthcare​​​​​​​",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Nitish Kumar, Deepak Chaurasiya, Alok Singh, Siddhartha Asthana, Kushagra Agarwal, and Ankur Arora"
+              "Nitish Kumar, Deepak Chaurasiya, Alok Singh, Siddhartha Asthana, Kushagra Agarwal,  Ankur Arora"
             ],
             "abstract": "",
             "year": 2021,
@@ -1547,11 +1598,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p65",
+            "id": "p1",
             "title": "Deep Learning based Time Series Forecasting",
             "topic": "Sequential Modelling",
             "authors": [
-              "​​​​​​​Kushagra Agarwal, Lalasa Dheekollu, Gaurav Dhama, Ankur Arora, Siddhartha Asthana, and Tanmoy Bhowmik"
+              "​​​​​​​Kushagra Agarwal, Lalasa Dheekollu, Gaurav Dhama, Ankur Arora, Siddhartha Asthana,  Tanmoy Bhowmik"
             ],
             "abstract": "",
             "year": 2020,
@@ -1562,11 +1613,55 @@
     ]
   },
   {
-    "id": "40.6782,-73.9442",
+    "id": "29.9559,-90.0730",
+    "city": "New Orleans",
+    "country": "USA",
+    "lat": 29.9559,
+    "lng": -90.073,
+    "conferences": [
+      {
+        "conferenceId": "Neurips",
+        "year": 2023,
+        "conferenceName": "Table Representation Learning Workshop at Neural Information Processing  (Neurips)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p61",
+            "title": "On Incorporating new Variables during Evaluation",
+            "topic": "Machine Learning",
+            "authors": [
+              "Harsimran Bhasin, Soumyadeep Ghosh"
+            ],
+            "abstract": "",
+            "year": 2023,
+            "keywords": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "29.9560,-90.0730",
+    "city": "New Orleans",
+    "country": "USA",
+    "lat": 29.956,
+    "lng": -90.073,
+    "conferences": [
+      {
+        "conferenceId": "Neurips",
+        "year": 2022,
+        "conferenceName": "INTERPOLATE Workshop at NeurIPS",
+        "date": "",
+        "papers": []
+      }
+    ]
+  },
+  {
+    "id": "40.7128,-74.0060",
     "city": "New York",
     "country": "USA",
-    "lat": 40.6782,
-    "lng": -73.9442,
+    "lat": 40.7128,
+    "lng": -74.006,
     "conferences": [
       {
         "conferenceId": "ICAIF",
@@ -1575,9 +1670,9 @@
         "date": "",
         "papers": [
           {
-            "id": "p25",
+            "id": "p70",
             "title": "Retrieval Augmented Fraud Detection",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
               "Anubha Pandey"
             ],
@@ -1586,27 +1681,18 @@
             "keywords": []
           },
           {
-            "id": "p26",
+            "id": "p71",
             "title": "FraudDiffuse: Diffusion-aided Synthetic Fraud Augmentation for Improved Fraud Detection",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Ruma Roy, Darshika Tiwari, and Anubha Pandey"
+              "Ruma Roy, Darshika Tiwari,  Anubha Pandey"
             ],
             "abstract": "",
             "year": 2024,
             "keywords": []
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "40.7128,-74.0060",
-    "city": "New York City",
-    "country": "USA",
-    "lat": 40.7128,
-    "lng": -74.006,
-    "conferences": [
+      },
       {
         "conferenceId": "ICAIF",
         "year": 2023,
@@ -1614,7 +1700,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p43",
+            "id": "p55",
             "title": "Learning Temporal Representations of Bipartite Financial Graphs",
             "topic": "Graph Learning",
             "authors": [
@@ -1625,17 +1711,152 @@
             "keywords": []
           },
           {
-            "id": "p44",
+            "id": "p56",
             "title": "Improving the Robustness of Financial Models through Identification of the Minimal Vulnerable Feature Set",
-            "topic": "Applications in finance",
+            "topic": "Applications in Finance",
             "authors": [
-              "Anubha Pandey, Himanshu Chaudhary, Alekhya Bhatraju, Deepak Bhatt and Maneet Singh"
+              "Anubha Pandey, Himanshu Chaudhary, Alekhya Bhatraju, Deepak Bhatt,  Maneet Singh"
             ],
             "abstract": "",
             "year": 2023,
             "keywords": []
           }
         ]
+      },
+      {
+        "conferenceId": "ICAIF",
+        "year": 2022,
+        "conferenceName": "ACM International Conference on Artificial Intelligence in Finance (ICAIF)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p36",
+            "title": "CaPE: Category Preserving Embeddings for Similarity-Search in Financial Graphs",
+            "topic": "Graph Learning",
+            "authors": [
+              "Gaurav Oberoi, Pranav Poduval, Karamjit Singh, Sangam Verma, Pranay Gupta"
+            ],
+            "abstract": "",
+            "year": 2022,
+            "keywords": []
+          },
+          {
+            "id": "p42",
+            "title": "Adversarial Fraud Generation for Improved Detection",
+            "topic": "Applications in Finance",
+            "authors": [
+              "Anubha Pandey, Alekhya Bhatraju, Shiv Markam, Deepak Bhatt"
+            ],
+            "abstract": "",
+            "year": 2022,
+            "keywords": []
+          },
+          {
+            "id": "p43",
+            "title": "Guided Self-Training based Semi-Supervised Learning for Fraud Detection",
+            "topic": "Applications in Finance",
+            "authors": [
+              "Awanish Kumar, Soumyadeep Ghosh,  Janu Verma"
+            ],
+            "abstract": "",
+            "year": 2022,
+            "keywords": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "28.5383,-81.3792",
+    "city": "Orlando",
+    "country": "USA",
+    "lat": 28.5383,
+    "lng": -81.3792,
+    "conferences": [
+      {
+        "conferenceId": "ICDMW",
+        "year": 2022,
+        "conferenceName": "Workshop on Social Data Mining in the Post-pandemic Era (SocDM) in conjunction with IEEE Conference on Data Mining (ICDMW)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p40",
+            "title": "Post-pandemic Economic Transformations in the United States of America",
+            "topic": "Others",
+            "authors": [
+              "Avi Chawla, Nidhi Mulay, Vikas Bishnoi, Yatin Katyal, Ankur Saraswat, Mohsen Bahrami, Esteban Moro and Alex Pentland"
+            ],
+            "abstract": "",
+            "year": 2022,
+            "keywords": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "34.1478,-118.1445",
+    "city": "Pasadena",
+    "country": "USA",
+    "lat": 34.1478,
+    "lng": -118.1445,
+    "conferences": [
+      {
+        "conferenceId": "ICMLA",
+        "year": 2021,
+        "conferenceName": "IEEE International Conference on Machine Learning and Applications (ICMLA)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p11",
+            "title": "Evolutionary adversarial attacks on Payment Systems",
+            "topic": "Machine Learning",
+            "authors": [
+              "Nishant Kumar, Siddharth Vimal, Kanishka Kayathwal, Gaurav Dhama"
+            ],
+            "abstract": "",
+            "year": 2021,
+            "keywords": []
+          },
+          {
+            "id": "p12",
+            "title": "Modelling Approaches for Silent Attrition Prediction in Payment Networks",
+            "topic": "Machine Learning",
+            "authors": [
+              "Lalasa Dheekollu, Hardik Wadhwa, Siddharth Vimal, Anubhav Gupta, Siddhartha Asthana, Ankur Arora,  Smriti Gupta"
+            ],
+            "abstract": "",
+            "year": 2021,
+            "keywords": []
+          },
+          {
+            "id": "p14",
+            "title": "Temporal Debiasing using Adversarial Loss based GNN Architecture for Crypto Fraud Detection",
+            "topic": "Applications in Finance",
+            "authors": [
+              "Aditya Singh, Anubhav Gupta, Hardik Wadhwa, Siddhartha Asthana,  Ankur Arora"
+            ],
+            "abstract": "",
+            "year": 2021,
+            "keywords": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "32.7061,-117.1610",
+    "city": "San Diego",
+    "country": "USA",
+    "lat": 32.7061,
+    "lng": -117.161,
+    "conferences": [
+      {
+        "conferenceId": "Neurips",
+        "year": 2025,
+        "conferenceName": "Women in Machine Learning Workshop at NeurIPS",
+        "date": "",
+        "papers": []
       }
     ]
   },
@@ -1653,11 +1874,11 @@
         "date": "",
         "papers": [
           {
-            "id": "p81",
+            "id": "p2",
             "title": "Information Retrieval and Extraction on COVID-19 Clinical Articles using Graph Community Detection and BIO-Bert Embeddings",
             "topic": "Graph Learning",
             "authors": [
-              "Debasmita Das, Yatin Katyal, Janu Verma, Rajesh Kumar Ranjan, Shashank Dubey, Aakash Deep Singh, Sourojit Bhaduri, and Kushagra Agarwal"
+              "Debasmita Das, Yatin Katyal, Janu Verma, Rajesh Kumar Ranjan, Shashank Dubey, Aakash Deep Singh, Sourojit Bhaduri,  Kushagra Agarwal"
             ],
             "abstract": "",
             "year": 2020,
@@ -1668,11 +1889,11 @@
     ]
   },
   {
-    "id": "32.2217,-110.9265",
-    "city": "Tucson, Arizona",
+    "id": "19.9436,-155.7900",
+    "city": "Waikoloa, Hawaii",
     "country": "USA",
-    "lat": 32.2217,
-    "lng": -110.9265,
+    "lat": 19.9436,
+    "lng": -155.79,
     "conferences": [
       {
         "conferenceId": "WACV",
@@ -1681,18 +1902,7 @@
         "date": "",
         "papers": [
           {
-            "id": "p1",
-            "title": "SHIP: Structural Hierarchies for Instance-dependent Partial Labels‎",
-            "topic": "Machine Learning",
-            "authors": [
-              "Tushar Kadam, Utkarsh Mishra, Aakarsh Malhotra"
-            ],
-            "abstract": "",
-            "year": 2025,
-            "keywords": []
-          },
-          {
-            "id": "p47",
+            "id": "p91",
             "title": "SHIP: Structural Hierarchies for Instance-dependent Partial Labels",
             "topic": "Machine Learning",
             "authors": [
@@ -1707,11 +1917,50 @@
     ]
   },
   {
-    "id": "19.9436,-155.7900",
-    "city": "Waikoloa, Hawaii",
+    "id": "38.9072,-77.0369",
+    "city": "Washington D.C.",
     "country": "USA",
-    "lat": 19.9436,
-    "lng": -155.79,
-    "conferences": []
+    "lat": 38.9072,
+    "lng": -77.0369,
+    "conferences": [
+      {
+        "conferenceId": "AAAI",
+        "year": 2023,
+        "conferenceName": "Workshop on Modelling Uncertainty in the Financial World (AAAI)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p60",
+            "title": "Practical Bias Mitigation through Proxy Sensitive Attribute Label Generation",
+            "topic": "Responsible AI",
+            "authors": [
+              "Bhushan Chaudhary, Anubha Pandey, Deepak Bhatt, Darshika Tiwari"
+            ],
+            "abstract": "",
+            "year": 2023,
+            "keywords": []
+          }
+        ]
+      },
+      {
+        "conferenceId": "SIGKDD",
+        "year": 2022,
+        "conferenceName": "Workshop on ML in Finance in conjunction with SIGKDD Conference on Knowledge Discovery and Data Mining (SIGKDD)",
+        "date": "",
+        "papers": [
+          {
+            "id": "p38",
+            "title": "Label-aware Sampling using Contrastive Learning for GNN-based Fraud Detection",
+            "topic": "Graph Learning",
+            "authors": [
+              "Garima Arora, Adarsh Patankar, Akash Choudhary, Janu Verma"
+            ],
+            "abstract": "",
+            "year": 2022,
+            "keywords": []
+          }
+        ]
+      }
+    ]
   }
 ]

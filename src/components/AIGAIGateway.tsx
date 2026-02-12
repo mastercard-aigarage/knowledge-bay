@@ -561,7 +561,7 @@ const AIGAIGateway: React.FC<AIGAIGatewayProps> = ({ onSelect, onBack, onOpenEve
             <motion.button
               type="button"
               className="aig-node"
-              style={{ ['--node-tint' as any]: n.tint }}
+              style={{ ['--node-tint' as any]: n.id === 'publications' ? 'rgba(247, 158, 27, 1)' : n.tint }}
               initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.15 + idx * 0.06, duration: 0.45, ease: 'easeOut' }}
@@ -586,7 +586,6 @@ const AIGAIGateway: React.FC<AIGAIGatewayProps> = ({ onSelect, onBack, onOpenEve
               <span className="aig-node-gloss" aria-hidden="true" />
               <span className="aig-node-icon" aria-hidden="true">{n.icon}</span>
               <span className="aig-node-title">{n.title}</span>
-              <span className="aig-node-subtitle">{n.subtitle}</span>
               <span className="aig-node-ring" aria-hidden="true" />
             </motion.button>
           </div>

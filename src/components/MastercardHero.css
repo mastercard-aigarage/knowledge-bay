@@ -43,38 +43,46 @@
   position: absolute;
   border-radius: 50%;
   border: 1px solid rgba(255, 170, 0, 0.3);
-  animation: mc-hero-pulse-ring 3s ease-in-out infinite;
+  top: 50%;
+  left: 50%;
+  animation: mc-hero-emit-ring 2.7s linear infinite;
   z-index: 0;
 }
 
 .mc-hero-circle-ring.ring-1 {
   width: 420px;
   height: 420px;
+  --mc-ring-start-scale: 0.762;
   animation-delay: 0s;
 }
 
 .mc-hero-circle-ring.ring-2 {
   width: 480px;
   height: 480px;
-  animation-delay: 0.5s;
+  --mc-ring-start-scale: 0.667;
+  animation-delay: 0.9s;
   border-color: rgba(255, 170, 0, 0.2);
 }
 
 .mc-hero-circle-ring.ring-3 {
   width: 540px;
   height: 540px;
-  animation-delay: 1s;
+  --mc-ring-start-scale: 0.593;
+  animation-delay: 1.8s;
   border-color: rgba(255, 170, 0, 0.15);
 }
 
-@keyframes mc-hero-pulse-ring {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.8;
+@keyframes mc-hero-emit-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(var(--mc-ring-start-scale, 0.75));
+    opacity: 0;
   }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.4;
+  12% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0;
   }
 }
 
@@ -94,12 +102,46 @@
   z-index: 2;
 }
 
+.mc-hero-circle--clickable {
+  cursor: pointer;
+  pointer-events: auto;
+  border: none;
+  padding: 0;
+}
+
+.mc-hero-circle--clickable:focus-visible {
+  outline: 2px solid rgba(255, 220, 160, 0.9);
+  outline-offset: 6px;
+}
+
 .mc-hero-logo {
-  width: 200px;
-  height: 200px;
+  width: 62%;
+  height: auto;
   object-fit: contain;
   filter: drop-shadow(0 0 20px rgba(255, 170, 0, 0.4));
   animation: none;
+}
+
+.mc-hero-logo-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
+  width: 100%;
+}
+
+.mc-hero-circle--aig-gateway .mc-hero-logo {
+  width: 34%;
+}
+
+.mc-hero-logo-caption {
+  font-size: clamp(1.35rem, 2.1vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: rgba(255, 220, 160, 0.92);
+  text-shadow: 0 0 14px rgba(255, 170, 0, 0.25);
 }
 
 @media (max-width: 768px) {
@@ -115,16 +157,22 @@
   .mc-hero-circle-ring.ring-1 {
     width: 320px;
     height: 320px;
+    --mc-ring-start-scale: 0.75;
+    animation-delay: 0s;
   }
 
   .mc-hero-circle-ring.ring-2 {
     width: 360px;
     height: 360px;
+    --mc-ring-start-scale: 0.667;
+    animation-delay: 0.9s;
   }
 
   .mc-hero-circle-ring.ring-3 {
     width: 400px;
     height: 400px;
+    --mc-ring-start-scale: 0.6;
+    animation-delay: 1.8s;
   }
 
   .mc-hero-circle {
@@ -133,8 +181,12 @@
   }
 
   .mc-hero-logo {
-    width: 150px;
-    height: 150px;
+    width: 62%;
+    height: auto;
     transform: none;
+  }
+
+  .mc-hero-circle--aig-gateway .mc-hero-logo {
+    width: 36%;
   }
 }

@@ -4,17 +4,13 @@ import './AIGEventsHackathonsPage.css';
 import './AIGEventsHackathonsOverlay.css';
 import { content, formatTemplate } from '../content/content';
 import { resolveImagePath } from '../utils/resolveImagePath';
+import { toTitleCase } from '../utils/toTitleCase';
 
 export type AIGEventsMode = 'events' | 'hackathons';
 
 function clampIndex(index: number, length: number): number {
   if (length <= 0) return 0;
   return ((index % length) + length) % length;
-}
-
-function looksLikeUrl(value: string): boolean {
-  const v = value.trim().toLowerCase();
-  return v.startsWith('http://') || v.startsWith('https://') || v.startsWith('mailto:') || v.startsWith('tel:');
 }
 
 interface AIGEventsHackathonsPageProps {
@@ -96,6 +92,30 @@ const AIGEventsHackathonsPage: React.FC<AIGEventsHackathonsPageProps> = ({ mode,
         transition={{ duration: 0.25 }}
         aria-label={`${title} page`}
       >
+        <motion.header
+          className="header"
+          initial={{ y: -40, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+        >
+          <motion.h1
+            className="title"
+            initial={{ scale: 0.96 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            {title}
+          </motion.h1>
+          <motion.p
+            className="subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.1, duration: 0.55, ease: 'easeOut' }}
+          >
+            {toTitleCase(subtitle)}
+          </motion.p>
+        </motion.header>
+
         <div className="aig-events-page-inner">
           <motion.div
             className="aig-events-panel"
@@ -104,114 +124,91 @@ const AIGEventsHackathonsPage: React.FC<AIGEventsHackathonsPageProps> = ({ mode,
             exit={{ opacity: 0, y: 10, scale: 0.99 }}
             transition={{ duration: 0.22, ease: 'easeOut' }}
           >
-            <header className="aig-events-header">
-              <div className="aig-events-header-left">
-                <div className="aig-events-title">{title}</div>
-                <div className="aig-events-subtitle">{subtitle}</div>
-              </div>
-            </header>
+            <div className="aig-events-body">
+              {length === 0 ? (
+                <div className="aig-events-status">
+                  {formatTemplate(copy.noneFound?.text ?? 'No {{kind}} found.', { kind: title.toLowerCase() })}
+                </div>
+              ) : (
+                <>
+                  <div className="aig-events-carousel">
+                    <button
+                      type="button"
+                      className="aig-events-nav aig-events-nav-left"
+                      onClick={focusPrev}
+                      disabled={length <= 1}
+                      aria-label="Previous"
+                      title="Previous"
+                    >
+                      <span className="aig-events-nav-icon" aria-hidden="true">
+                        ‹
+                      </span>
+                    </button>
 
-          <div className="aig-events-body">
-            {length === 0 ? (
-              <div className="aig-events-status">
-                {formatTemplate(copy.noneFound?.text ?? 'No {{kind}} found.', { kind: title.toLowerCase() })}
-              </div>
-            ) : (
-              <>
-                <div className="aig-events-carousel">
-                  <button
-                    type="button"
-                    className="aig-events-nav aig-events-nav-left"
-                    onClick={focusPrev}
-                    disabled={length <= 1}
-                    aria-label="Previous"
-                    title="Previous"
-                  >
-                    <span className="aig-events-nav-icon" aria-hidden="true">
-                      ‹
-                    </span>
-                  </button>
+                    <div className="aig-events-card-shell">
+                      <AnimatePresence mode="wait" initial={false}>
+                        {current && (
+                          <motion.div
+                            key={`${current.name}-${activeIndex}`}
+                            className="aig-events-card"
+                            initial={{ opacity: 0, x: 22, scale: 0.99 }}
+                            animate={{ opacity: 1, x: 0, scale: 1 }}
+                            exit={{ opacity: 0, x: -22, scale: 0.99 }}
+                            transition={{ duration: 0.22, ease: 'easeOut' }}
+                          >
+                            <div className="aig-events-card-imageWrap" aria-hidden="true">
+                              {currentImageSrc ? (
+                                <img className="aig-events-card-image" src={currentImageSrc} alt="" loading="lazy" />
+                              ) : (
+                                <div className="aig-events-card-imageFallback" />
+                              )}
+                              <div className="aig-events-card-gloss" />
+                              <div className="aig-events-card-bottomFade" />
 
-                  <div className="aig-events-card-shell">
-                    <AnimatePresence mode="wait" initial={false}>
-                      {current && (
-                        <motion.div
-                          key={`${current.name}-${activeIndex}`}
-                          className="aig-events-card"
-                          initial={{ opacity: 0, x: 22, scale: 0.99 }}
-                          animate={{ opacity: 1, x: 0, scale: 1 }}
-                          exit={{ opacity: 0, x: -22, scale: 0.99 }}
-                          transition={{ duration: 0.22, ease: 'easeOut' }}
-                        >
-                          <div className="aig-events-card-imageWrap" aria-hidden="true">
-                            {currentImageSrc ? (
-                              <img className="aig-events-card-image" src={currentImageSrc} alt="" loading="lazy" />
-                            ) : (
-                              <div className="aig-events-card-imageFallback" />
-                            )}
-                            <div className="aig-events-card-gloss" />
-                            <div className="aig-events-card-bottomFade" />
-
-                            {mode === 'hackathons' && current.position?.trim() ? (
-                              <div className="aig-events-card-badges">
-                                <div className="aig-events-card-badge" title={current.position} role="note">
-                                  {current.position}
+                              {mode === 'hackathons' && current.position?.trim() ? (
+                                <div className="aig-events-card-badges">
+                                  <div className="aig-events-card-badge" title={current.position} role="note">
+                                    {current.position}
+                                  </div>
                                 </div>
-                              </div>
-                            ) : null}
-                          </div>
-
-                          <div className="aig-events-card-content">
-                            <div className="aig-events-card-text">
-                              <div className="aig-events-card-name">{current.name}</div>
-                              <div className="aig-events-card-dest">{current.destination}</div>
-                              <div className="aig-events-card-desc">{current.description}</div>
+                              ) : null}
                             </div>
 
-                            {looksLikeUrl(current.link) ? (
-                              <a
-                                className="aig-events-card-cta"
-                                href={current.link}
-                                target="_blank"
-                                rel="noreferrer"
-                                aria-label={`Open link for ${current.name}`}
-                              >
-                                {copy.openLink?.text ?? 'Open ↗'}
-                              </a>
-                            ) : (
-                              <button type="button" className="aig-events-card-cta" disabled aria-disabled="true" title="No link provided">
-                                {copy.noLink?.text ?? 'No link'}
-                              </button>
-                            )}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                            <div className="aig-events-card-content">
+                              <div className="aig-events-card-text">
+                                <div className="aig-events-card-name">{current.name}</div>
+                                <div className="aig-events-card-dest">{toTitleCase(current.destination)}</div>
+                                <div className="aig-events-card-desc">{current.description}</div>
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    <button
+                      type="button"
+                      className="aig-events-nav aig-events-nav-right"
+                      onClick={focusNext}
+                      disabled={length <= 1}
+                      aria-label="Next"
+                      title="Next"
+                    >
+                      <span className="aig-events-nav-icon" aria-hidden="true">
+                        ›
+                      </span>
+                    </button>
                   </div>
 
-                  <button
-                    type="button"
-                    className="aig-events-nav aig-events-nav-right"
-                    onClick={focusNext}
-                    disabled={length <= 1}
-                    aria-label="Next"
-                    title="Next"
-                  >
-                    <span className="aig-events-nav-icon" aria-hidden="true">
-                      ›
-                    </span>
-                  </button>
-                </div>
-
-                <div className="aig-events-footer" aria-hidden="true">
-                  <div className="aig-events-counter">
-                    {clampIndex(activeIndex, length) + 1} / {length}
+                  <div className="aig-events-footer" aria-hidden="true">
+                    <div className="aig-events-counter">
+                      {clampIndex(activeIndex, length) + 1} / {length}
+                    </div>
+                    <div className="aig-events-hint">Use ← → to browse • Esc to go back</div>
                   </div>
-                  <div className="aig-events-hint">Use ← → to browse • Esc to go back</div>
-                </div>
-              </>
-            )}
-          </div>
+                </>
+              )}
+            </div>
         </motion.div>
       </div>
       </motion.section>

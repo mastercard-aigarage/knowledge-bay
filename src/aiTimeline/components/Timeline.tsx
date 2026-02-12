@@ -11,6 +11,7 @@ import React, {
 import { TIMELINE_DATA, CATEGORIES } from "../data/timelineData";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { iconForKey } from "../../content/iconRegistry";
 
 const MIN_CARD_WIDTH = 180;
 const ROW_GAP = 10;
@@ -24,6 +25,12 @@ const ZOOM_LEVELS = [1, 2, 3, 4, 6, 8];
 // Cards view spine range
 const SPINE_START_YEAR = 1950;
 const SPINE_END_YEAR = 2025;
+
+const SPINE_TOTAL_HEIGHT_PX = 2400;
+const SPINE_TOP_PADDING_PX = 60;
+// Larger bottom padding prevents the spine dot/labels from drifting below the last card
+// when the page reaches max scroll and the spine translation clamps.
+const SPINE_BOTTOM_PADDING_PX = 240;
 
 const resolvePublicUrl = (url) => {
   if (!url) return url;
@@ -71,11 +78,13 @@ const CardsView = React.memo(function CardsView({
   const [scrollProgress, setScrollProgress] = useState(0);
   const [spineOffset, setSpineOffset] = useState(0);
   const [backgroundProgress, setBackgroundProgress] = useState(0);
-  const [scrollSpeed, setScrollSpeed] = useState(0.5);
+  const [scrollSpeed, setScrollSpeed] = useState(0.3);
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
   const autoScrollRef = useRef(null);
+  const scrollCarryRef = useRef(0);
   const pausedUntilRef = useRef(0);
   const previousActiveIndexRef = useRef(0);
+  const isResettingRef = useRef(false);
   const AUTO_SCROLL_SPEED = scrollSpeed; // pixels per frame
 
   const filteredEvents = useMemo(
@@ -90,6 +99,8 @@ const CardsView = React.memo(function CardsView({
 
     const updateActiveCardAndSpine = () => {
       if (!timelineRef.current) return;
+      // Skip updates during reset to prevent glitchy card highlighting
+      if (isResettingRef.current) return;
 
       const cards = timelineRef.current.getElementsByClassName('event-card');
       if (!cards || cards.length === 0) return;
@@ -140,8 +151,10 @@ const CardsView = React.memo(function CardsView({
       setBackgroundProgress(normalizedProgress);
 
       // Align the dot (and thus the timeline spine) to the active card's center on-screen.
-      const spineHeight = 2400;
-      const dotPosition = 60 + progress * (spineHeight - 120);
+      const spineHeight = SPINE_TOTAL_HEIGHT_PX;
+      const dotPosition =
+        SPINE_TOP_PADDING_PX +
+        progress * (spineHeight - SPINE_TOP_PADDING_PX - SPINE_BOTTOM_PADDING_PX);
       const activeCardEl = cards[closestCard];
       const activeRect = activeCardEl.getBoundingClientRect();
       const desiredDotY = activeRect.top + activeRect.height / 2;
@@ -177,6 +190,7 @@ const CardsView = React.memo(function CardsView({
         cancelAnimationFrame(autoScrollRef.current);
         autoScrollRef.current = null;
       }
+      scrollCarryRef.current = 0;
       return;
     }
 
@@ -203,10 +217,14 @@ const CardsView = React.memo(function CardsView({
         setTimeout(() => {
           if (!isActive) return;
           
+          // Flag that we're resetting to prevent scroll handler interference
+          isResettingRef.current = true;
+          
           // Reset to first event to sync spine before scrolling
           setActiveEventIndex(0);
+          previousActiveIndexRef.current = 0;
           
-          // Smoothly scroll back to top
+          // Smoothly scroll back to absolute top
           window.scrollTo({
             top: 0,
             behavior: 'smooth',
@@ -216,11 +234,19 @@ const CardsView = React.memo(function CardsView({
           setTimeout(() => {
             if (!isActive) return;
             
-            // Ensure we're still at the first event
+            // Ensure we're at the very top and at first event
             setActiveEventIndex(0);
+            previousActiveIndexRef.current = 0;
+            // Ensure absolutely at top
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            
+            // Re-enable scroll handler
+            isResettingRef.current = false;
+            
             startTime = null;
             autoScrollRef.current = requestAnimationFrame(animate);
-          }, 1000);
+          }, 1200);
         }, 1000);
         
         // Don't schedule another frame during reset
@@ -234,8 +260,13 @@ const CardsView = React.memo(function CardsView({
           return;
         }
         
-        // Continue scrolling down
-        window.scrollBy(0, AUTO_SCROLL_SPEED);
+        // Continue scrolling down (accumulate sub-pixel movement)
+        scrollCarryRef.current += AUTO_SCROLL_SPEED;
+        const delta = Math.floor(scrollCarryRef.current);
+        if (delta > 0) {
+          scrollCarryRef.current -= delta;
+          window.scrollBy(0, delta);
+        }
         
         // Manually trigger update for active card to keep dot in sync
         if (timelineRef.current) {
@@ -320,64 +351,78 @@ const CardsView = React.memo(function CardsView({
       data-scroll-progress={backgroundProgress}
     >
       {/* Auto-scroll controls */}
-      <div className="fixed bottom-8 right-8 z-50 flex gap-3 items-center">
+      <div className="ai-timeline-controls">
         {/* Auto-scroll toggle button */}
         <button
+          type="button"
           onClick={() => setAutoScroll(!autoScroll)}
-          className="px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg backdrop-blur-sm bg-orange-600 hover:bg-orange-700 text-white"
+          className="ai-timeline-control ai-timeline-control--play"
           title={autoScroll ? 'Stop auto-scroll' : 'Start auto-scroll'}
+          aria-pressed={autoScroll}
         >
           {autoScroll ? (
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
+            <svg className="ai-timeline-control-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} aria-hidden="true">
               <rect x="6" y="4" width="4" height="16" />
               <rect x="14" y="4" width="4" height="16" />
             </svg>
           ) : (
-            <svg className="w-5 h-5" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="ai-timeline-control-icon" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 3l14 9-14 9V3z" />
             </svg>
           )}
         </button>
         
         {/* Speed selector button */}
-        <div className="relative">
+        <div className="ai-timeline-speed">
           <button
+            type="button"
             onClick={() => setShowSpeedMenu(!showSpeedMenu)}
-            className="px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg backdrop-blur-sm bg-orange-600 hover:bg-orange-700 text-white flex items-center gap-2"
+            className="ai-timeline-control ai-timeline-control--speed"
             title="Scroll speed"
+            aria-haspopup="menu"
+            aria-expanded={showSpeedMenu}
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="ai-timeline-control-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </button>
           
           {/* Speed menu */}
           {showSpeedMenu && (
-            <div className="absolute bottom-full right-0 mb-2 bg-gray-900/95 backdrop-blur-sm rounded-lg shadow-xl border border-white/20 overflow-hidden">
+            <div className="ai-timeline-speed-menu" role="menu">
               <button
+                type="button"
                 onClick={() => {
-                  setScrollSpeed(0.5);
+                  setScrollSpeed(0.3);
                   setShowSpeedMenu(false);
                 }}
-                className={`w-full px-6 py-3 text-left text-white hover:bg-white/10 transition-colors ${scrollSpeed === 0.5 ? 'bg-orange-600' : ''}`}
+                className={`ai-timeline-speed-item ${scrollSpeed === 0.3 ? 'is-active' : ''}`}
+                role="menuitemradio"
+                aria-checked={scrollSpeed === 0.3}
               >
                 Slow
               </button>
               <button
+                type="button"
                 onClick={() => {
                   setScrollSpeed(0.7);
                   setShowSpeedMenu(false);
                 }}
-                className={`w-full px-6 py-3 text-left text-white hover:bg-white/10 transition-colors ${scrollSpeed === 0.7 ? 'bg-orange-600' : ''}`}
+                className={`ai-timeline-speed-item ${scrollSpeed === 0.7 ? 'is-active' : ''}`}
+                role="menuitemradio"
+                aria-checked={scrollSpeed === 0.7}
               >
                 Medium
               </button>
               <button
+                type="button"
                 onClick={() => {
                   setScrollSpeed(1);
                   setShowSpeedMenu(false);
                 }}
-                className={`w-full px-6 py-3 text-left text-white hover:bg-white/10 transition-colors ${scrollSpeed === 1 ? 'bg-orange-600' : ''}`}
+                className={`ai-timeline-speed-item ${scrollSpeed === 1 ? 'is-active' : ''}`}
+                role="menuitemradio"
+                aria-checked={scrollSpeed === 1}
               >
                 Fast
               </button>
@@ -398,7 +443,7 @@ const CardsView = React.memo(function CardsView({
             <div
               className="relative"
               style={{
-                height: "2400px",
+                height: `${SPINE_TOTAL_HEIGHT_PX}px`,
                 transform: `translateY(${spineOffset}px)`,
                 transition: "transform 0.2s ease-out",
                 willChange: "transform",
@@ -429,8 +474,11 @@ const CardsView = React.memo(function CardsView({
                       (currentDate - startDate) / (1000 * 60 * 60 * 24);
                     const progress = daysPassed / totalDays;
 
-                    const usableHeight = 2400 - 120;
-                    return 60 + progress * usableHeight;
+                    const usableHeight =
+                      SPINE_TOTAL_HEIGHT_PX -
+                      SPINE_TOP_PADDING_PX -
+                      SPINE_BOTTOM_PADDING_PX;
+                    return SPINE_TOP_PADDING_PX + progress * usableHeight;
                   })()}px`,
                   boxShadow: "0 0 10px rgba(255, 255, 255, 0.5)",
                 }}
@@ -441,9 +489,9 @@ const CardsView = React.memo(function CardsView({
                 const startDate = new Date(SPINE_START_YEAR, 0, 1);
                 const endDate = new Date(SPINE_END_YEAR, 11, 31);
                 const totalDays = (endDate - startDate) / (1000 * 60 * 60 * 24);
-                const topPadding = 60;
-                const bottomPadding = 60;
-                const usableHeight = 2400 - topPadding - bottomPadding;
+                const topPadding = SPINE_TOP_PADDING_PX;
+                const bottomPadding = SPINE_BOTTOM_PADDING_PX;
+                const usableHeight = SPINE_TOTAL_HEIGHT_PX - topPadding - bottomPadding;
 
                 return filteredEvents.map((event, index) => {
                   // Only show duration bar for the active event
@@ -495,9 +543,9 @@ const CardsView = React.memo(function CardsView({
                 const endDate = new Date(SPINE_END_YEAR, 11, 31);
                 const totalDays = (endDate - startDate) / (1000 * 60 * 60 * 24);
 
-                const totalSpacing = 2400;
-                const topPadding = 60;
-                const bottomPadding = 60;
+                const totalSpacing = SPINE_TOTAL_HEIGHT_PX;
+                const topPadding = SPINE_TOP_PADDING_PX;
+                const bottomPadding = SPINE_BOTTOM_PADDING_PX;
                 const usableHeight = totalSpacing - topPadding - bottomPadding;
 
                 return years.map((year) => {
@@ -532,9 +580,9 @@ const CardsView = React.memo(function CardsView({
                 const totalDays = (endDate - startDate) / (1000 * 60 * 60 * 24);
                 const markers = [];
 
-                const totalSpacing = 2400;
-                const topPadding = 60;
-                const bottomPadding = 60;
+                const totalSpacing = SPINE_TOTAL_HEIGHT_PX;
+                const topPadding = SPINE_TOP_PADDING_PX;
+                const bottomPadding = SPINE_BOTTOM_PADDING_PX;
                 const usableHeight = totalSpacing - topPadding - bottomPadding;
 
                 // Generate intermediate markers based on gap between consecutive years
@@ -620,31 +668,24 @@ const CardsView = React.memo(function CardsView({
                 {isLongDuration && (
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-orange-500/30 via-orange-400/30 to-orange-500/30" />
                 )}
+                <div className="flex items-start gap-4">
+                  <div className="flex-1">
+                    <div className="flex items-start gap-4">
+                      {event.iconKey && iconForKey(event.iconKey) && (
+                        <div className="flex-shrink-0 w-12 flex items-center justify-center rounded-full bg-orange-500/10 text-orange-400 self-stretch">
+                          <div className="w-12 h-12 flex items-center justify-center">
+                            {iconForKey(event.iconKey)}
+                          </div>
+                        </div>
+                      )}
+                      <div className="flex-1">
                 <div className="text-sm text-white/60 font-medium tracking-wide flex items-center gap-2 flex-wrap">
                   <span 
                     className="inline-flex items-center px-2 py-0.5 rounded text-xs border"
                     style={{
-                      backgroundColor: 
-                        event.category === 'MILESTONES' ? 'rgba(255, 200, 31, 0.2)' :
-                        event.category === 'FOUNDATIONS' ? 'rgba(171, 103, 224, 0.2)' :
-                        event.category === 'TECHNIQUES' ? 'rgba(141, 185, 46, 0.2)' :
-                        event.category === 'MODELS' ? 'rgba(79, 205, 176, 0.2)' :
-                        event.category === 'ADOPTION' ? 'rgba(220, 91, 173, 0.2)' :
-                        'rgba(156, 163, 175, 0.2)',
-                      color: 
-                        event.category === 'MILESTONES' ? 'rgb(255, 200, 31)' :
-                        event.category === 'FOUNDATIONS' ? 'rgb(171, 103, 224)' :
-                        event.category === 'TECHNIQUES' ? 'rgb(141, 185, 46)' :
-                        event.category === 'MODELS' ? 'rgb(79, 205, 176)' :
-                        event.category === 'ADOPTION' ? 'rgb(220, 91, 173)' :
-                        'rgb(156, 163, 175)',
-                      borderColor: 
-                        event.category === 'MILESTONES' ? 'rgba(255, 200, 31, 0.3)' :
-                        event.category === 'FOUNDATIONS' ? 'rgba(171, 103, 224, 0.3)' :
-                        event.category === 'TECHNIQUES' ? 'rgba(141, 185, 46, 0.3)' :
-                        event.category === 'MODELS' ? 'rgba(79, 205, 176, 0.3)' :
-                        event.category === 'ADOPTION' ? 'rgba(220, 91, 173, 0.3)' :
-                        'rgba(156, 163, 175, 0.3)'
+                      backgroundColor: 'rgba(255, 200, 31, 0.2)',
+                      color: 'rgb(255, 200, 31)',
+                      borderColor: 'rgba(255, 200, 31, 0.3)'
                     }}
                   >
                     {t("categories." + event.category)}
@@ -663,6 +704,8 @@ const CardsView = React.memo(function CardsView({
                     __html: localizedContent.headline,
                   }}
                 />
+                      </div>
+                    </div>
                 <div
                   className="text-white/80 text-base leading-relaxed mt-3"
                   // Use localized text
@@ -692,6 +735,8 @@ const CardsView = React.memo(function CardsView({
                     )}
                   </div>
                 )}
+                  </div>
+                </div>
               </div>
             );
           })}
