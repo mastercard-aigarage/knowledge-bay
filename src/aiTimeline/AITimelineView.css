@@ -237,10 +237,6 @@
 
 /* Gradient for timeline event-card headings */
 .ai-timeline-event-title {
-  font-weight: 700;
-  letter-spacing: 0.25px;
-
-  font-family: var(--mc-font-sans);
   display: inline-block;
 
   background: linear-gradient(90deg, #f79e1b 0%, #f79e1b 45%, #ffb347 55%, #f79e1b 65%);

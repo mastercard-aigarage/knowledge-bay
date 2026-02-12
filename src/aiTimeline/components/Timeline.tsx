@@ -698,7 +698,7 @@ const CardsView = React.memo(function CardsView({
                   )}`}
                 </div>
                 <div
-                  className="font-serif text-2xl font-normal text-white leading-snug mt-2"
+                  className="font-serif text-2xl font-normal text-white leading-snug mt-2 ai-timeline-event-title"
                   // Use localized headline
                   dangerouslySetInnerHTML={{
                     __html: localizedContent.headline,
@@ -860,7 +860,7 @@ const EventCard = React.memo(function EventCard({
         <div className="relative z-10" ref={contentRef}>
           <div
             className={`
-                            font-serif leading-snug mb-1 text-lg
+                            font-serif leading-snug mb-1 text-lg ai-timeline-event-title
                             ${isHovered ? "text-white" : "text-white/90"}
                         `}
             dangerouslySetInnerHTML={{ __html: localizedContent.headline }}

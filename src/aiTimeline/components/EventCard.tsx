@@ -12,7 +12,7 @@ export default function EventCard({ event, ...rest }) {
   return (
     <div className="event-card" {...rest}>
       <h3
-        className="event-headline"
+        className="event-headline ai-timeline-event-title"
         dangerouslySetInnerHTML={{ __html: content.headline }}
       />
       <div
