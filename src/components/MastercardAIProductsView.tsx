@@ -32,33 +32,56 @@ interface MastercardAIProductsViewProps {
   onBack: () => void;
 }
 
+type VideoEntry = {
+  name: string;
+  description: string;
+  src?: string;
+  mode?: 'single' | 'playlist';
+};
+
 const MastercardAIProductsView: React.FC<MastercardAIProductsViewProps> = ({ onBack }) => {
   const copy = content.pages.mcProducts;
 
-  const videos = useMemo(
+  const baseVideos: VideoEntry[] = useMemo(
     () => [
       {
         name: 'MC Facts',
         description: '',
-        src: new URL('../../assets/videos/0.mp4', import.meta.url).toString()
+        src: new URL('../../assets/videos/0.mp4', import.meta.url).toString(),
+        mode: 'single'
       },
       {
         name: '3 Points',
         description: '',
-        src: new URL('../../assets/videos/1.mp4', import.meta.url).toString()
+        src: new URL('../../assets/videos/1.mp4', import.meta.url).toString(),
+        mode: 'single'
       },
       {
         name: 'Evolution 4 points',
         description: '',
-        src: new URL('../../assets/videos/2.mp4', import.meta.url).toString()
+        src: new URL('../../assets/videos/2.mp4', import.meta.url).toString(),
+        mode: 'single'
       },
       {
         name: '4 points',
         description: '',
-        src: new URL('../../assets/videos/3.mp4', import.meta.url).toString()
+        src: new URL('../../assets/videos/3.mp4', import.meta.url).toString(),
+        mode: 'single'
       }
     ],
     []
+  );
+
+  const videos: VideoEntry[] = useMemo(
+    () => [
+      ...baseVideos,
+      {
+        name: 'All videos',
+        description: '',
+        mode: 'playlist'
+      }
+    ],
+    [baseVideos]
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -66,8 +89,12 @@ const MastercardAIProductsView: React.FC<MastercardAIProductsViewProps> = ({ onB
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [playlistIndex, setPlaylistIndex] = useState(0);
   const length = videos.length;
   const current = length > 0 ? videos[clampIndex(activeIndex, length)] : null;
+  const isPlaylistMode = current?.mode === 'playlist' && baseVideos.length > 0;
+  const playlistSrc = isPlaylistMode ? baseVideos[clampIndex(playlistIndex, baseVideos.length)]?.src : undefined;
+  const videoSrc = (isPlaylistMode ? playlistSrc : current?.src) ?? '';
 
   const focusNext = () => setActiveIndex((prev) => clampIndex(prev + 1, length));
   const focusPrev = () => setActiveIndex((prev) => clampIndex(prev - 1, length));
@@ -76,6 +103,26 @@ const MastercardAIProductsView: React.FC<MastercardAIProductsViewProps> = ({ onB
     setIsPlaying(true);
     setProgress(0);
   }, [activeIndex]);
+
+  useEffect(() => {
+    if (!isPlaylistMode) return;
+    setPlaylistIndex(0);
+  }, [activeIndex, isPlaylistMode]);
+
+  useEffect(() => {
+    if (!isPlaylistMode) return;
+    const el = videoRef.current;
+    if (!el) return;
+    const attemptPlay = async () => {
+      try {
+        await el.play();
+        setIsPlaying(true);
+      } catch {
+        // ignore autoplay/play rejections
+      }
+    };
+    void attemptPlay();
+  }, [isPlaylistMode, playlistIndex]);
 
   useEffect(() => {
     const onFullscreenChange = () => {
@@ -240,15 +287,19 @@ const MastercardAIProductsView: React.FC<MastercardAIProductsViewProps> = ({ onB
                   <div className="aig-events-card-imageWrap" aria-hidden="true">
                     <video
                       className="aig-events-card-image"
-                      src={current.src}
+                      src={videoSrc}
                       muted
-                      loop
+                      loop={!isPlaylistMode}
                       autoPlay
                       playsInline
                       preload="metadata"
                       ref={videoRef}
                       onPlay={() => setIsPlaying(true)}
                       onPause={() => setIsPlaying(false)}
+                      onEnded={() => {
+                        if (!isPlaylistMode || baseVideos.length <= 0) return;
+                        setPlaylistIndex((prev) => clampIndex(prev + 1, baseVideos.length));
+                      }}
                       onLoadedMetadata={(e) => {
                         const el = e.currentTarget;
                         const ratio = el.duration ? el.currentTime / el.duration : 0;
