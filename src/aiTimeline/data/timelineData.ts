@@ -149,7 +149,7 @@ export const TIMELINE_DATA = {
     "category": CATEGORIES.TECHNIQUES,
     "iconKey": "neuralNet",
     "media": {
-      "url": "",
+      "url": "/ai_timeline_imgs/nn.jpg",
       "alt": "",
       "source": ""
     }
@@ -194,9 +194,9 @@ export const TIMELINE_DATA = {
       "text": "<p>Supercomputer Deep Blue defeated world chess champion Garry Kasparov. This was a watershed moment proving that &quot;brute-force&quot; search and heuristic evaluation could beat the best human strategic thinkers.</p>"
     },
     "media": {
-      "url": "/ai_timeline_imgs/1996_deep-blue_320_16x9.avif",
+      "url": "/ai_timeline_imgs/chess.jpg",
       "alt": "",
-      "source": "Gemini"
+      "source": ""
     },
     "importance": 3,
     "category": CATEGORIES.MILESTONES,
@@ -269,7 +269,7 @@ export const TIMELINE_DATA = {
     "category": CATEGORIES.TECHNIQUES,
     "iconKey": "gan",
     "media": {
-      "url": "",
+      "url": "/ai_timeline_imgs/gan.jpg",
       "alt": "",
       "source": ""
     }
@@ -317,7 +317,7 @@ export const TIMELINE_DATA = {
     "category": CATEGORIES.TECHNIQUES,
     "iconKey": "transformer",
     "media": {
-      "url": "",
+      "url": "/ai_timeline_imgs/transformer.jpg",
       "alt": "",
       "source": ""
     }
@@ -413,7 +413,7 @@ export const TIMELINE_DATA = {
     "category": CATEGORIES.ADOPTION,
     "iconKey": "consumerAvatar",
     "media": {
-      "url": "",
+      "url": "/ai_timeline_imgs/consumer.jpg",
       "alt": "",
       "source": ""
     }
@@ -437,7 +437,7 @@ export const TIMELINE_DATA = {
     "category": CATEGORIES.ADOPTION,
     "iconKey": "events",
     "media": {
-      "url": "",
+      "url": "/ai_timeline_imgs/genai.jpg",
       "alt": "",
       "source": ""
     }
@@ -533,7 +533,7 @@ export const TIMELINE_DATA = {
     "category": CATEGORIES.ADOPTION,
     "iconKey": "agentsGoLive",
     "media": {
-      "url": "",
+      "url": "/ai_timeline_imgs/agents.jpg",
       "alt": "",
       "source": ""
     }

@@ -326,6 +326,12 @@
   height: 2em;
 }
 
+/* The "Decades of AI evolution" glyph is thin; bump it slightly for legibility. */
+.ai-evo-card-icon svg.ai-evo-icon-aiEvolution {
+  width: 2.6em;
+  height: 2.6em;
+}
+
 /* The AI@Mastercard glyph has more visual padding than the other two; bump it slightly. */
 .ai-evo-card-icon svg.ai-evo-icon-aiMastercard {
   width: 3.35em;
@@ -472,6 +478,11 @@
   .ai-evo-card-icon svg {
     width: 1.6em;
     height: 1.6em;
+  }
+
+  .ai-evo-card-icon svg.ai-evo-icon-aiEvolution {
+    width: 2.1em;
+    height: 2.1em;
   }
 
   .ai-evo-card-icon svg.ai-evo-icon-aiMastercard {
