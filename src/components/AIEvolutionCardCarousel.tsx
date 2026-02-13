@@ -231,9 +231,7 @@ const AIEvolutionCardCarousel: React.FC<AIEvolutionCardCarouselProps> = ({
                     Enter →
                   </div>
                 ) : (
-                  <div className="ai-evo-card-cta" aria-hidden="true">
-                    Focus
-                  </div>
+                  <div className="ai-evo-card-cta" aria-hidden="true" />
                 )}
               </div>
 
@@ -258,9 +256,7 @@ const AIEvolutionCardCarousel: React.FC<AIEvolutionCardCarouselProps> = ({
                     Enter →
                   </div>
                 ) : (
-                  <div className="ai-evo-card-cta" aria-hidden="true">
-                    Focus
-                  </div>
+                  <div className="ai-evo-card-cta" aria-hidden="true" />
                 )}
               </div>
             </motion.button>
