@@ -23,6 +23,7 @@ type AIGEventItem = {
   description: string;
   link: string;
   imagePath: string;
+  year?: number;
   position?: string;
 };
 
@@ -35,7 +36,13 @@ const AIGEventsHackathonsOverlay: React.FC<AIGEventsHackathonsOverlayProps> = ({
   }, [mode]);
 
   const filtered = useMemo<AIGEventItem[]>(() => {
-    return mode === 'hackathons' ? content.hackathons : content.events;
+    if (mode === 'hackathons') return content.hackathons;
+    return [...content.events].sort((a, b) => {
+      const ay = a.year ?? -Infinity;
+      const by = b.year ?? -Infinity;
+      if (by !== ay) return by - ay;
+      return a.name.localeCompare(b.name);
+    });
   }, [mode]);
 
   const length = filtered.length;
@@ -153,6 +160,14 @@ const AIGEventsHackathonsOverlay: React.FC<AIGEventsHackathonsOverlayProps> = ({
                               </div>
                             </div>
                           ) : null}
+
+                          {mode === 'events' && typeof current.year === 'number' ? (
+                            <div className="aig-events-card-badges">
+                              <div className="aig-events-card-badge aig-events-card-badge--year" title={String(current.year)} role="note">
+                                {current.year}
+                              </div>
+                            </div>
+                          ) : null}
                         </div>
 
                         <div className="aig-events-card-content">
@@ -179,12 +194,12 @@ const AIGEventsHackathonsOverlay: React.FC<AIGEventsHackathonsOverlayProps> = ({
                 </button>
               </div>
 
-              <div className="aig-events-footer" aria-hidden="true">
+              {/* <div className="aig-events-footer" aria-hidden="true">
                 <div className="aig-events-counter">
                   {clampIndex(activeIndex, length) + 1} / {length}
                 </div>
                 <div className="aig-events-hint">Use ← → to browse • Esc to close</div>
-              </div>
+              </div> */}
             </>
           )}
         </div>

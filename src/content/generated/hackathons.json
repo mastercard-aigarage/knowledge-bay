@@ -5,6 +5,7 @@
     "description": "This competition track focuses on evaluating LLM safety by creating controlled adversarial prompts designed to reveal where model defenses may fail. By systematically probing these weaknesses, researchers can better understand real‑world vulnerabilities and develop stronger, more reliable, and more trustworthy AI systems.",
     "link": "https://www.llmagentsafetycomp24.com",
     "imagePath": "images/jailbreak.jpeg",
+    "year": null,
     "position": "Global Rank 2 +$3000 Prize"
   },
   {
@@ -13,6 +14,7 @@
     "description": "The competition focused on developing models that detect Reddit comments violating community rules.The challenge tests Al's ability to understand nuanced norms and enable scalable, consistent content moderation.",
     "link": "https://www.kaggle.com/competitions/jigsaw-agile-community-rules",
     "imagePath": "images/jigsaw.jpeg",
+    "year": null,
     "position": "Rank 32/2445: Sliver Medal"
   },
   {
@@ -21,6 +23,7 @@
     "description": "The competition focuses on building Al agents for social deduction games, requiring reasoning under uncertainty, deception detection, teamwork, and strategic communication in multi-agent environments.",
     "link": "https://www.mindgamesarena.com/track/social-deduction",
     "imagePath": "images/mind.jpeg",
+    "year": null,
     "position": "Global Rank 05"
   },
   {
@@ -29,6 +32,7 @@
     "description": "Create essays that expose weaknesses in LLM-based judging systems.The track tests the robustness of automated subjective evaluation and highlights inconsistencies across different Al judges.",
     "link": "https://www.kaggle.com/competitions/llms-you-cant-please-them-all",
     "imagePath": "images/cant-please.jpeg",
+    "year": null,
     "position": "Gold Medal"
   },
   {
@@ -37,6 +41,7 @@
     "description": "Develop multimodal Al systems that use images and external knowledge to answer user queries. The challenge evaluates visual understanding, retrieval, and grounded reasoning for real-world assistant tasks.",
     "link": "https://www.aicrowd.com/challenges/meta-crag-mm-challenge-2025",
     "imagePath": "images/reasoning.jpeg",
+    "year": null,
     "position": "Rank 40 out of 500 + Poster Presentation in KDD"
   },
   {
@@ -45,6 +50,7 @@
     "description": "The competition focused on predicting user retention scores for a major global video‑streaming platform with massive user activity. Retention scores indicate how many days a user will open the app within a future time window, making them crucial for understanding engagement and satisfaction.",
     "link": "https://www.wsdm-conference.org/2022/wsdm-cup/",
     "imagePath": "images/streaming.jpeg",
+    "year": null,
     "position": "17th out of 991 teams"
   },
   {
@@ -53,6 +59,7 @@
     "description": "This competition was part of the OGB Large-Scale Challenge (OGB‑LSC), designed to drive the development of state‑of‑the‑art graph machine learning models for massive, real‑world datasets. It focuses on graph problems that reflect modern scale and complexity, spanning domains such as molecules, knowledge graphs, and large network structures",
     "link": "https://ogb.stanford.edu/kddcup2021/",
     "imagePath": "images/graph.jpeg",
+    "year": null,
     "position": "Top 10 finish"
   },
   {
@@ -61,6 +68,7 @@
     "description": "This competition examined how information spreads on social media during the COVID‑19 pandemic by focusing on retweet behavior on Twitter. Using the TweetsCOV19 dataset—over 8 million COVID‑19–related tweets from October 2019 to April 2020—the challenge asked participants to predict which tweets users would retweet.",
     "link": "https://data.gesis.org/covid19challenge/",
     "imagePath": "images/social.jpeg",
+    "year": null,
     "position": "2nd Rank"
   }
 ]

@@ -155,6 +155,20 @@
   transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
 }
 
+/*
+  These nav buttons are controlled via global keyboard handlers (←/→).
+  After a pointer click, browsers may show a default focus ring when arrow keys are pressed.
+  Suppress that default focus outline for this specific control.
+*/
+.aig-events-nav:focus,
+.aig-events-nav:focus-visible {
+  outline: none;
+}
+
+.aig-events-nav::-moz-focus-inner {
+  border: 0;
+}
+
 .aig-events-nav-icon {
   display: flex;
   align-items: center;
@@ -282,6 +296,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
   position: relative;
+}
+
+.aig-events-card-badge--year {
+  margin-left: 0;
 }
 
 .aig-events-card-badge::before {

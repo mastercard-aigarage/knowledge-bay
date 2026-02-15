@@ -127,7 +127,7 @@ const UniversityCollaborationsGlobe: React.FC<UniversityCollaborationsGlobeProps
         ref={globeEl}
         width={size.width}
         height={size.height}
-        globeImageUrl={resolveImagePath("assets/images/globe4.jpg")}
+        globeImageUrl={resolveImagePath("assets/images/globe2.jpg")}
         bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
         backgroundColor="rgba(0,0,0,0)"
         objectsData={points}

@@ -25,7 +25,7 @@ export type AppContent = {
   aiEvolutionCards: Array<{ id: string; title: string; description: string; accent: string; iconKey: string }>;
   aigGatewayNodes: Array<{ id: string; title: string; subtitle: string; tint: string; iconKey: string }>;
   products: Array<{ id: string; label: string; iconKey: string }>;
-  events: Array<{ name: string; destination: string; description: string; link: string; imagePath: string }>;
+  events: Array<{ name: string; destination: string; description: string; link: string; imagePath: string; year?: number }>;
   hackathons: Array<{ name: string; destination: string; description: string; link: string; imagePath: string; position?: string }>;
   universityCollaborations: UniversityCollaborationLocation[];
   publications: PublicationVenueLocation[];

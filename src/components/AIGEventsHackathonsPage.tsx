@@ -24,6 +24,7 @@ type AIGEventItem = {
   description: string;
   link: string;
   imagePath: string;
+  year?: number;
   position?: string;
 };
 
@@ -37,7 +38,13 @@ const AIGEventsHackathonsPage: React.FC<AIGEventsHackathonsPageProps> = ({ mode,
   }, [mode]);
 
   const filtered = useMemo<AIGEventItem[]>(() => {
-    return mode === 'hackathons' ? content.hackathons : content.events;
+    if (mode === 'hackathons') return content.hackathons;
+    return [...content.events].sort((a, b) => {
+      const ay = a.year ?? -Infinity;
+      const by = b.year ?? -Infinity;
+      if (by !== ay) return by - ay;
+      return a.name.localeCompare(b.name);
+    });
   }, [mode]);
 
   const length = filtered.length;
@@ -135,6 +142,7 @@ const AIGEventsHackathonsPage: React.FC<AIGEventsHackathonsPageProps> = ({ mode,
                     <button
                       type="button"
                       className="aig-events-nav aig-events-nav-left"
+                      onPointerDown={(e) => e.preventDefault()}
                       onClick={focusPrev}
                       disabled={length <= 1}
                       aria-label="Previous"
@@ -172,6 +180,14 @@ const AIGEventsHackathonsPage: React.FC<AIGEventsHackathonsPageProps> = ({ mode,
                                   </div>
                                 </div>
                               ) : null}
+
+                              {mode === 'events' && typeof current.year === 'number' ? (
+                                <div className="aig-events-card-badges">
+                                  <div className="aig-events-card-badge aig-events-card-badge--year" title={String(current.year)} role="note">
+                                    {current.year}
+                                  </div>
+                                </div>
+                              ) : null}
                             </div>
 
                             <div className="aig-events-card-content">
@@ -189,6 +205,7 @@ const AIGEventsHackathonsPage: React.FC<AIGEventsHackathonsPageProps> = ({ mode,
                     <button
                       type="button"
                       className="aig-events-nav aig-events-nav-right"
+                      onPointerDown={(e) => e.preventDefault()}
                       onClick={focusNext}
                       disabled={length <= 1}
                       aria-label="Next"
@@ -200,12 +217,12 @@ const AIGEventsHackathonsPage: React.FC<AIGEventsHackathonsPageProps> = ({ mode,
                     </button>
                   </div>
 
-                  <div className="aig-events-footer" aria-hidden="true">
+                  {/* <div className="aig-events-footer" aria-hidden="true">
                     <div className="aig-events-counter">
                       {clampIndex(activeIndex, length) + 1} / {length}
                     </div>
                     <div className="aig-events-hint">Use ← → to browse • Esc to go back</div>
-                  </div>
+                  </div> */}
                 </>
               )}
             </div>

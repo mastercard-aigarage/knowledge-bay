@@ -398,7 +398,7 @@ const CardsView = React.memo(function CardsView({
                 }}
                 className={`ai-timeline-speed-item ${scrollSpeed === 0.3 ? 'is-active' : ''}`}
                 role="menuitemradio"
-                aria-checked={scrollSpeed === 0.3}
+                aria-checked={scrollSpeed === 0.5}
               >
                 Slow
               </button>
@@ -410,7 +410,7 @@ const CardsView = React.memo(function CardsView({
                 }}
                 className={`ai-timeline-speed-item ${scrollSpeed === 0.7 ? 'is-active' : ''}`}
                 role="menuitemradio"
-                aria-checked={scrollSpeed === 0.7}
+                aria-checked={scrollSpeed === 1}
               >
                 Medium
               </button>
@@ -422,7 +422,7 @@ const CardsView = React.memo(function CardsView({
                 }}
                 className={`ai-timeline-speed-item ${scrollSpeed === 1 ? 'is-active' : ''}`}
                 role="menuitemradio"
-                aria-checked={scrollSpeed === 1}
+                aria-checked={scrollSpeed === 1.5}
               >
                 Fast
               </button>

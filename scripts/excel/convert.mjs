@@ -18,6 +18,9 @@ function ensureNumber(value, fallback = 0) {
 }
 
 function ensureNumberOrNull(value) {
+  if (value == null) return null;
+  const raw = String(value).trim();
+  if (!raw) return null;
   const n = Number(value);
   return Number.isFinite(n) ? n : null;
 }
@@ -100,6 +103,7 @@ function normalizeEventRow(row) {
     description: asString(row['Event Description']).trim(),
     link: asString(row['Event Website Link']).trim(),
     imagePath: asString(row['Event Image Path']).trim(),
+    year: ensureNumberOrNull(row.year ?? row['year']),
     position: asString(row.Position ?? '').trim() || undefined
   };
 }
@@ -333,6 +337,14 @@ async function main() {
   const events = rowsFromSheet(workbook, 'Events')
     .map(normalizeEventRow)
     .filter((e) => e.name);
+
+  // Outreach (Events): show most recent first.
+  events.sort((a, b) => {
+    const ay = a.year ?? -Infinity;
+    const by = b.year ?? -Infinity;
+    if (by !== ay) return by - ay;
+    return a.name.localeCompare(b.name);
+  });
 
   const hackathons = rowsFromSheet(workbook, 'Hackathons')
     .map(normalizeEventRow)

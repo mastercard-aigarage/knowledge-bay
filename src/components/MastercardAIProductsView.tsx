@@ -263,6 +263,7 @@ const MastercardAIProductsView: React.FC<MastercardAIProductsViewProps> = ({ onB
           <button
             type="button"
             className="aig-events-nav aig-events-nav-left"
+            onPointerDown={(e) => e.preventDefault()}
             onClick={focusPrev}
             disabled={length <= 1}
             aria-label="Previous video"
@@ -388,6 +389,7 @@ const MastercardAIProductsView: React.FC<MastercardAIProductsViewProps> = ({ onB
           <button
             type="button"
             className="aig-events-nav aig-events-nav-right"
+            onPointerDown={(e) => e.preventDefault()}
             onClick={focusNext}
             disabled={length <= 1}
             aria-label="Next video"
@@ -400,10 +402,10 @@ const MastercardAIProductsView: React.FC<MastercardAIProductsViewProps> = ({ onB
         </div>
 
         <div className="mc-products-media-footer" aria-hidden="true">
-          <div className="aig-events-counter">
+          {/* <div className="aig-events-counter">
             {clampIndex(activeIndex, length) + 1} / {length}
-          </div>
-          <div className="aig-events-hint">Use ← → to browse • Esc to go back</div>
+          </div> */}
+          {/* <div className="aig-events-hint">Use ← → to browse • Esc to go back</div> */}
         </div>
       </div>
     </motion.section>
